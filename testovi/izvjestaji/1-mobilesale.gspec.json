@@ -1,0 +1,554 @@
+{
+  "testId" : "1-mobilesale.gspec",
+  "name" : "mobileSale.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Simple check",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  mobileSale.gspec --url http://localhost/sale.html --size 600x768 --htmlreport izvjestaji",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: mobileSale.gspec included tags: ",
+          "status" : "info",
+          "time" : 1573662511976,
+          "sections" : [ {
+            "name" : "Header section",
+            "place" : {
+              "filePath" : "mobileSale.gspec",
+              "lineNumber" : 19
+            },
+            "objects" : [ {
+              "name" : "logo",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 21
+                },
+                "name" : "width 100px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "100px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 22
+                },
+                "name" : "height 100px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "100px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 23
+                },
+                "name" : "centered horizontally inside viewport",
+                "highlight" : [ "logo", "viewport" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 24
+                },
+                "name" : "inside screen 50px top",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "screen",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "50px",
+                  "realDistance" : "50px"
+                } ],
+                "highlight" : [ "logo", "screen" ]
+              } ]
+            }, {
+              "name" : "li",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 26
+                },
+                "name" : "css display is \"block\"",
+                "highlight" : [ "li" ]
+              } ]
+            }, {
+              "name" : "list-item1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 28
+                },
+                "name" : "text contains \"PoÄ?etna\"",
+                "highlight" : [ "list-item1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "above list-item2",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "list-item1",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "list-item2",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "11px"
+                } ],
+                "highlight" : [ "list-item1", "list-item2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 48
+                },
+                "name" : "aligned vertically left list-item2",
+                "highlight" : [ "list-item1", "list-item2" ]
+              } ]
+            }, {
+              "name" : "list-item2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 30
+                },
+                "name" : "text contains \"Sale\"",
+                "highlight" : [ "list-item2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 31
+                },
+                "name" : "css text-decoration-line is \"none\"",
+                "highlight" : [ "list-item2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "above list-item3",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "list-item2",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "list-item3",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "12px"
+                } ],
+                "highlight" : [ "list-item2", "list-item3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 48
+                },
+                "name" : "aligned vertically left list-item3",
+                "highlight" : [ "list-item2", "list-item3" ]
+              } ]
+            }, {
+              "name" : "list-item3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 33
+                },
+                "name" : "text contains \"Unos\"",
+                "highlight" : [ "list-item3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "above list-item4",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "list-item3",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "list-item4",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "11px"
+                } ],
+                "highlight" : [ "list-item3", "list-item4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 48
+                },
+                "name" : "aligned vertically left list-item4",
+                "highlight" : [ "list-item3", "list-item4" ]
+              } ]
+            }, {
+              "name" : "list-item4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 35
+                },
+                "name" : "text contains \"Rezervacije\"",
+                "highlight" : [ "list-item4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "above list-item5",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "list-item4",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "list-item5",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "11px"
+                } ],
+                "highlight" : [ "list-item4", "list-item5" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 48
+                },
+                "name" : "aligned vertically left list-item5",
+                "highlight" : [ "list-item4", "list-item5" ]
+              } ]
+            }, {
+              "name" : "list-item5",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 37
+                },
+                "name" : "text contains \"Osobe\"",
+                "highlight" : [ "list-item5" ]
+              } ]
+            }, {
+              "name" : "ul",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 39
+                },
+                "name" : "css list-style-type is \"none\"",
+                "highlight" : [ "ul" ]
+              } ]
+            }, {
+              "name" : "meni",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 41
+                },
+                "name" : "inside screen 100px top",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "meni",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "screen",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "100px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "meni", "screen" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 42
+                },
+                "name" : "above sadrzaj 5px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "meni",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "sadrzaj",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "5px",
+                  "realDistance" : "5px"
+                } ],
+                "highlight" : [ "meni", "sadrzaj" ]
+              } ]
+            }, {
+              "name" : "comments",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 44
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            } ]
+          }, {
+            "name" : "Main section",
+            "place" : {
+              "filePath" : "mobileSale.gspec",
+              "lineNumber" : 49
+            },
+            "objects" : [ {
+              "name" : "sadrzaj",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 51
+                },
+                "name" : "below meni 5px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "sadrzaj",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "meni",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "5px",
+                  "realDistance" : "5px"
+                } ],
+                "highlight" : [ "sadrzaj", "meni" ]
+              } ]
+            }, {
+              "name" : "tabelaSala",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 53
+                },
+                "name" : "centered horizontally inside viewport",
+                "highlight" : [ "tabelaSala", "viewport" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 54
+                },
+                "name" : "inside sadrzaj",
+                "meta" : [ ],
+                "highlight" : [ "tabelaSala", "sadrzaj" ]
+              } ]
+            }, {
+              "name" : "sala",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 56
+                },
+                "name" : "css color is \"rgb(0, 0, 0)\"",
+                "highlight" : [ "sala" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 57
+                },
+                "name" : "css text-align is \"left\"",
+                "highlight" : [ "sala" ]
+              } ]
+            }, {
+              "name" : "slobodnaSala",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 59
+                },
+                "name" : "css background-color is \"rgb(0, 128, 0)\"",
+                "highlight" : [ "slobodnaSala" ]
+              } ]
+            }, {
+              "name" : "zauzetaSala",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 61
+                },
+                "name" : "css background-color is \"rgb(216, 101, 51)\"",
+                "highlight" : [ "zauzetaSala" ]
+              } ]
+            }, {
+              "name" : "kancelarija",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 63
+                },
+                "name" : "css background-color is \"rgb(112, 162, 196)\"",
+                "highlight" : [ "kancelarija" ]
+              } ]
+            }, {
+              "name" : "headerRedni",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 65
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "headerSprat",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 67
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "dole",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 69
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "centrirano",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale.gspec",
+                  "lineNumber" : 71
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "list-item1" : {
+              "area" : [ 18, 211, 50, 17 ]
+            },
+            "meni" : {
+              "area" : [ 8, 100, 556, 253 ]
+            },
+            "zauzetaSala" : {
+              "area" : [ 350, 414, 42, 42 ]
+            },
+            "screen" : {
+              "area" : [ 0, 0, 572, 775 ]
+            },
+            "sadrzaj" : {
+              "area" : [ 8, 358, 556, 408 ]
+            },
+            "kancelarija" : {
+              "area" : [ 221, 671, 42, 42 ]
+            },
+            "tabelaSala" : {
+              "area" : [ 179, 369, 214, 387 ]
+            },
+            "slobodnaSala" : {
+              "area" : [ 350, 371, 42, 42 ]
+            },
+            "viewport" : {
+              "area" : [ 0, 0, 572, 688 ]
+            },
+            "sala" : {
+              "area" : [ 179, 371, 42, 42 ]
+            },
+            "ul" : {
+              "area" : [ 13, 205, 544, 142 ]
+            },
+            "logo" : {
+              "area" : [ 236, 50, 100, 100 ]
+            },
+            "list-item5" : {
+              "area" : [ 18, 324, 40, 17 ]
+            },
+            "li" : {
+              "area" : [ 13, 205, 544, 28 ]
+            },
+            "list-item4" : {
+              "area" : [ 18, 296, 75, 17 ]
+            },
+            "list-item3" : {
+              "area" : [ 18, 268, 33, 17 ]
+            },
+            "list-item2" : {
+              "area" : [ 18, 239, 27, 17 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1573662509564,
+        "type" : "node"
+      } ],
+      "time" : 1573662504844,
+      "type" : "node"
+    } ]
+  }
+}

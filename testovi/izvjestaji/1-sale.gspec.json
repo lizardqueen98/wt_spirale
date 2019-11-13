@@ -1,0 +1,567 @@
+{
+  "testId" : "1-sale.gspec",
+  "name" : "sale.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Simple check",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  sale.gspec --url http://localhost/sale.html --size 1024x768 --htmlreport izvjestaji",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: sale.gspec included tags: ",
+          "status" : "info",
+          "time" : 1573662566293,
+          "sections" : [ {
+            "name" : "Header section",
+            "place" : {
+              "filePath" : "sale.gspec",
+              "lineNumber" : 19
+            },
+            "objects" : [ {
+              "name" : "logo",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 21
+                },
+                "name" : "width 100px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "100px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 22
+                },
+                "name" : "height 100px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "100px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 23
+                },
+                "name" : "centered horizontally inside viewport",
+                "highlight" : [ "logo", "viewport" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 24
+                },
+                "name" : "inside screen 50px top",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "screen",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "50px",
+                  "realDistance" : "50px"
+                } ],
+                "highlight" : [ "logo", "screen" ]
+              } ]
+            }, {
+              "name" : "li",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 26
+                },
+                "name" : "css display is \"inline\"",
+                "highlight" : [ "li" ]
+              } ]
+            }, {
+              "name" : "list-item1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 28
+                },
+                "name" : "text contains \"PoÄ?etna\"",
+                "highlight" : [ "list-item1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "aligned horizontally all list-item2",
+                "highlight" : [ "list-item1", "list-item2" ]
+              } ]
+            }, {
+              "name" : "list-item2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 30
+                },
+                "name" : "text contains \"Sale\"",
+                "highlight" : [ "list-item2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 31
+                },
+                "name" : "css text-decoration-line is \"none\"",
+                "highlight" : [ "list-item2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "aligned horizontally all list-item3",
+                "highlight" : [ "list-item2", "list-item3" ]
+              } ]
+            }, {
+              "name" : "list-item3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 33
+                },
+                "name" : "text contains \"Unos\"",
+                "highlight" : [ "list-item3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "aligned horizontally all list-item4",
+                "highlight" : [ "list-item3", "list-item4" ]
+              } ]
+            }, {
+              "name" : "list-item4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 35
+                },
+                "name" : "text contains \"Rezervacije\"",
+                "highlight" : [ "list-item4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "aligned horizontally all list-item5",
+                "highlight" : [ "list-item4", "list-item5" ]
+              } ]
+            }, {
+              "name" : "list-item5",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 37
+                },
+                "name" : "text contains \"Osobe\"",
+                "highlight" : [ "list-item5" ]
+              } ]
+            }, {
+              "name" : "ul",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 39
+                },
+                "name" : "css list-style-type is \"none\"",
+                "highlight" : [ "ul" ]
+              } ]
+            }, {
+              "name" : "meni",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 41
+                },
+                "name" : "inside screen 100px top",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "meni",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "screen",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "100px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "meni", "screen" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 42
+                },
+                "name" : "above sadrzaj 5px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "meni",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "sadrzaj",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "5px",
+                  "realDistance" : "5px"
+                } ],
+                "highlight" : [ "meni", "sadrzaj" ]
+              } ]
+            }, {
+              "name" : "comments",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 44
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            } ]
+          }, {
+            "name" : "Main section",
+            "place" : {
+              "filePath" : "sale.gspec",
+              "lineNumber" : 48
+            },
+            "objects" : [ {
+              "name" : "sadrzaj",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 50
+                },
+                "name" : "below meni 5px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "sadrzaj",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "meni",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "5px",
+                  "realDistance" : "5px"
+                } ],
+                "highlight" : [ "sadrzaj", "meni" ]
+              } ]
+            }, {
+              "name" : "tabelaSala",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 52
+                },
+                "name" : "centered horizontally inside viewport",
+                "highlight" : [ "tabelaSala", "viewport" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 53
+                },
+                "name" : "inside sadrzaj 10px top",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "tabelaSala",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "sadrzaj",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "10px",
+                  "realDistance" : "10px"
+                } ],
+                "highlight" : [ "tabelaSala", "sadrzaj" ]
+              } ]
+            }, {
+              "name" : "sala",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 55
+                },
+                "name" : "css color is \"rgb(0, 0, 0)\"",
+                "highlight" : [ "sala" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 56
+                },
+                "name" : "css text-align is \"left\"",
+                "highlight" : [ "sala" ]
+              } ]
+            }, {
+              "name" : "slobodnaSala",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css background-color is \"rgb(0, 128, 0)\"",
+                "highlight" : [ "slobodnaSala" ]
+              } ]
+            }, {
+              "name" : "zauzetaSala",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 60
+                },
+                "name" : "css background-color is \"rgb(216, 101, 51)\"",
+                "highlight" : [ "zauzetaSala" ]
+              } ]
+            }, {
+              "name" : "kancelarija",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 62
+                },
+                "name" : "css background-color is \"rgb(112, 162, 196)\"",
+                "highlight" : [ "kancelarija" ]
+              } ]
+            }, {
+              "name" : "headerRedni",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css text-align is \"left\"",
+                "highlight" : [ "headerRedni" ]
+              } ]
+            }, {
+              "name" : "dole",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 66
+                },
+                "name" : "css vertical-align is \"bottom\"",
+                "highlight" : [ "dole" ]
+              } ]
+            }, {
+              "name" : "centrirano",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 68
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "centrirano" ]
+              } ]
+            }, {
+              "name" : "headerSprat2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 71
+                },
+                "name" : "css text-align is \"right\"",
+                "highlight" : [ "headerSprat2" ]
+              } ]
+            }, {
+              "name" : "headerSprat3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 71
+                },
+                "name" : "css text-align is \"right\"",
+                "highlight" : [ "headerSprat3" ]
+              } ]
+            }, {
+              "name" : "headerSprat4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 71
+                },
+                "name" : "css text-align is \"right\"",
+                "highlight" : [ "headerSprat4" ]
+              } ]
+            }, {
+              "name" : "headerSprat5",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 71
+                },
+                "name" : "css text-align is \"right\"",
+                "highlight" : [ "headerSprat5" ]
+              } ]
+            }, {
+              "name" : "headerSprat6",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 71
+                },
+                "name" : "css text-align is \"right\"",
+                "highlight" : [ "headerSprat6" ]
+              } ]
+            }, {
+              "name" : "headerSprat1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "sale.gspec",
+                  "lineNumber" : 73
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "headerSprat1" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "list-item1" : {
+              "area" : [ 18, 206, 50, 17 ]
+            },
+            "zauzetaSala" : {
+              "area" : [ 604, 391, 42, 42 ]
+            },
+            "screen" : {
+              "area" : [ 0, 0, 996, 752 ]
+            },
+            "kancelarija" : {
+              "area" : [ 476, 647, 42, 42 ]
+            },
+            "tabelaSala" : {
+              "area" : [ 348, 245, 298, 487 ]
+            },
+            "slobodnaSala" : {
+              "area" : [ 604, 348, 42, 42 ]
+            },
+            "centrirano" : {
+              "area" : [ 433, 246, 214, 50 ]
+            },
+            "ul" : {
+              "area" : [ 13, 205, 968, 18 ]
+            },
+            "logo" : {
+              "area" : [ 448, 50, 100, 100 ]
+            },
+            "list-item5" : {
+              "area" : [ 262, 206, 40, 17 ]
+            },
+            "list-item4" : {
+              "area" : [ 172, 206, 75, 17 ]
+            },
+            "list-item3" : {
+              "area" : [ 125, 206, 33, 17 ]
+            },
+            "list-item2" : {
+              "area" : [ 83, 206, 27, 17 ]
+            },
+            "meni" : {
+              "area" : [ 8, 100, 980, 130 ]
+            },
+            "headerSprat2" : {
+              "area" : [ 433, 297, 42, 50 ]
+            },
+            "headerSprat1" : {
+              "area" : [ 433, 246, 214, 50 ]
+            },
+            "headerSprat6" : {
+              "area" : [ 604, 297, 42, 50 ]
+            },
+            "headerRedni" : {
+              "area" : [ 348, 297, 84, 50 ]
+            },
+            "headerSprat5" : {
+              "area" : [ 561, 297, 42, 50 ]
+            },
+            "headerSprat4" : {
+              "area" : [ 518, 297, 42, 50 ]
+            },
+            "dole" : {
+              "area" : [ 348, 297, 84, 50 ]
+            },
+            "headerSprat3" : {
+              "area" : [ 476, 297, 42, 50 ]
+            },
+            "sadrzaj" : {
+              "area" : [ 8, 235, 980, 509 ]
+            },
+            "viewport" : {
+              "area" : [ 0, 0, 996, 688 ]
+            },
+            "sala" : {
+              "area" : [ 433, 348, 42, 42 ]
+            },
+            "li" : {
+              "area" : [ 13, 201, 60, 27 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1573662563749,
+        "type" : "node"
+      } ],
+      "time" : 1573662559146,
+      "type" : "node"
+    } ]
+  }
+}

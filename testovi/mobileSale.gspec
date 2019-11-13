@@ -1,0 +1,74 @@
+@objects
+ meni .meni
+ logo .logo
+ sadrzaj .sadrzaj
+ ul .meni ul
+ li .meni ul li
+ list-item* .meni ul li a
+ sala .sala
+ slobodnaSala .slobodnaSala
+ zauzetaSala .zauzetaSala
+ kancelarija .kancelarija
+ tabelaSala .tabelaSala
+ headerSprat .headerSprat
+ headerRedni .headerRedni
+ dole .dole
+ centrirano .centrirano
+
+
+= Header section =
+ logo:
+  width 100px
+  height 100px
+  centered horizontally inside viewport 
+  inside screen 50px top
+ li:
+  css display is "block"
+ list-item1:
+  text contains "Početna"
+ list-item2:
+  text contains "Sale"
+  css text-decoration-line is "none"
+ list-item3:
+  text contains "Unos"
+ list-item4:
+  text contains "Rezervacije"
+ list-item5:
+  text contains "Osobe"
+ ul:
+  css list-style-type is "none"
+ meni:
+  inside screen 100px top
+  above sadrzaj 5px
+ comments:
+  absent
+ @forEach [list-item*] as link, next as sljedeciLink
+       ${link}:
+           above ${sljedeciLink}
+           aligned vertically left ${sljedeciLink}
+= Main section =
+ sadrzaj:
+  below meni 5px 
+ tabelaSala:
+  centered horizontally inside viewport 
+  inside sadrzaj 
+ sala:
+  css color is "rgb(0, 0, 0)"
+  css text-align is "left"
+ slobodnaSala:
+  css background-color is "rgb(0, 128, 0)"
+ zauzetaSala:
+  css background-color is "rgb(216, 101, 51)"
+ kancelarija:
+  css background-color is "rgb(112, 162, 196)"
+ headerRedni:
+  absent
+ headerSprat:
+  absent
+ dole:
+  absent
+ centrirano:
+  absent
+ 
+
+  

@@ -1,0 +1,132 @@
+.meni{
+    background-color: #27BCB7;
+    border: solid 1px;
+    border-color: #28BC81;
+    margin: 100px auto auto;
+    }
+
+    .logo{
+    background-image: url("rs.jpg");
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    margin: auto;
+    transform: translateY(-50%);
+    }
+    
+    a:link {
+      color: black;
+    }
+    .podvuceno{
+    text-decoration: none;
+    }
+    ul {
+    list-style-type: none;
+    margin: 5px;
+    padding: 0;
+    }
+    li{
+    display: inline;
+    padding: 5px;
+    }
+    .sadrzaj{
+        background-color: #27BCB7;
+        border: solid 1px;
+        border-color: #28BC81;
+        margin: 5px auto;
+        padding: 5px;
+        }
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        padding: 0.5em;
+        grid-gap: 10px;
+        border: 3px solid;
+        border-color: rgb(91, 115, 190);
+        background-color: rgba(98, 205, 238, 0.8);
+        width: 25em;
+    }
+    .grid-item {
+        text-align: center;
+        border: 3px solid;
+        border-color: rgb(91, 115, 190);
+        font-size: 1em;
+        background-color: white;
+      }
+      .grid-item.dani{
+        background-color: transparent;
+        height: min-content;
+      }
+      .slobodna{
+        border-top: 3px solid;
+        border-color: rgb(91, 115, 190);
+        background-color: rgb(24, 206, 18);
+        padding: 0.35em;
+      }
+      .zauzeta{
+        border-top: 3px solid;
+        border-color: rgb(91, 115, 190);
+        background-color: rgb(247, 14, 14);
+        padding: 0.35em;
+      }
+      .novembar{
+        font-size: 1.5em;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        grid-column: 1/8;
+      }
+      .prethodni{
+        border-color: rgb(91, 115, 190);
+        background-color: rgba(98, 205, 238, 0.8);
+        width: 6em;
+        border-radius: 8px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      }
+      .sljedeci{
+        border-color: rgb(91, 115, 190);
+        background-color: rgba(98, 205, 238, 0.8);
+        width: 6em;
+        /*transform: translateX(19em);*/
+        border-radius: 8px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        position: absolute;
+        right: 0%;
+      }
+      .margine{
+        margin: 0.5em auto;
+      }
+      .dugmad{
+        position: relative;
+        width: 27em;
+      }
+    @media screen and (max-width: 600px) {
+        .novembar{
+          font-size: 1em;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+          grid-column: 1/3;
+        }
+        .neprikazuj{
+          display: none;
+        }
+        .grid-container{
+          display: grid;
+          grid-auto-flow: column;
+          grid-template-rows: repeat(8, 1fr);
+          grid-template-columns: repeat(2, 1fr);
+          padding: 10px;
+          grid-gap: 10px;
+          border: 3px solid;
+          border-color: rgb(91, 115, 190);
+          background-color: rgba(98, 205, 238, 0.8);
+          width: 6em;
+      }
+      .dugmad{
+        position: relative;
+        width: 10.5em;
+      }
+      li{
+        padding: 5px;
+        display: block;
+      }
+    }
+
+   

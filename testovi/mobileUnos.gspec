@@ -1,0 +1,57 @@
+@objects
+ meni .meni
+ logo .logo
+ sadrzaj .sadrzaj
+ ul .meni ul
+ li .meni ul li
+ list-item* .meni ul li a
+ label* label
+ input* input
+
+= Header section =
+ logo:
+  width 100px
+  height 100px
+  centered horizontally inside viewport 
+  inside screen 50px top
+ li:
+  css display is "block"
+ list-item1:
+  text contains "Početna"
+ list-item2:
+  text contains "Sale"
+ list-item3:
+  text contains "Unos"
+  css text-decoration-line is "none"
+ list-item4:
+  text contains "Rezervacije"
+ list-item5:
+  text contains "Osobe"
+ ul:
+  css list-style-type is "none"
+ meni:
+  inside screen 100px top
+  above sadrzaj 5px
+ comments:
+  absent
+ @forEach [list-item*] as link, next as sljedeciLink
+       ${link}:
+           above ${sljedeciLink}
+           aligned vertically left ${sljedeciLink}
+= Main section =
+ @for [1 - 5] as index
+        label${index}:
+            above input${index} 
+ @forEach [label*] as label, next as nextLabel
+       ${label}:
+		   aligned vertically left ${nextLabel}
+           css display is "block"
+           inside sadrzaj 5px left
+           above ${nextLabel}
+ @forEach [input*] as ulaz, next as sljedeciUlaz
+       ${ulaz}:
+           aligned vertically left ${sljedeciUlaz}
+           css display is "inline-block"
+           inside sadrzaj 5px left
+           above ${sljedeciUlaz}
+ 

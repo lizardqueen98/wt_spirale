@@ -1,0 +1,17 @@
+{
+  "tests" : [ {
+    "name" : "sale.gspec",
+    "startedAt" : 1573662559146,
+    "endedAt" : 1573662569142,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 36,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 36
+    },
+    "testId" : "1-sale.gspec",
+    "duration" : 9996,
+    "failed" : false
+  } ]
+}

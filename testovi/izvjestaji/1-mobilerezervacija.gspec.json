@@ -1,0 +1,966 @@
+{
+  "testId" : "1-mobilerezervacija.gspec",
+  "name" : "mobileRezervacija.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Simple check",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  mobileRezervacija.gspec --url http://localhost/rezervacija.html --size 600x768 --htmlreport izvjestaji",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: mobileRezervacija.gspec included tags: ",
+          "status" : "info",
+          "time" : 1573662444022,
+          "sections" : [ {
+            "name" : "Header section",
+            "place" : {
+              "filePath" : "mobileRezervacija.gspec",
+              "lineNumber" : 18
+            },
+            "objects" : [ {
+              "name" : "logo",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 20
+                },
+                "name" : "width 100px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "100px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 21
+                },
+                "name" : "height 100px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "100px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 22
+                },
+                "name" : "centered horizontally inside viewport",
+                "highlight" : [ "logo", "viewport" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 23
+                },
+                "name" : "inside screen 50px top",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "screen",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "50px",
+                  "realDistance" : "50px"
+                } ],
+                "highlight" : [ "logo", "screen" ]
+              } ]
+            }, {
+              "name" : "li",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "css display is \"block\"",
+                "highlight" : [ "li" ]
+              } ]
+            }, {
+              "name" : "list-item1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 27
+                },
+                "name" : "text contains \"PoÄ?etna\"",
+                "highlight" : [ "list-item1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 46
+                },
+                "name" : "above list-item2",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "list-item1",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "list-item2",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "11px"
+                } ],
+                "highlight" : [ "list-item1", "list-item2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "aligned vertically left list-item2",
+                "highlight" : [ "list-item1", "list-item2" ]
+              } ]
+            }, {
+              "name" : "list-item2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 29
+                },
+                "name" : "text contains \"Sale\"",
+                "highlight" : [ "list-item2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 46
+                },
+                "name" : "above list-item3",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "list-item2",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "list-item3",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "12px"
+                } ],
+                "highlight" : [ "list-item2", "list-item3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "aligned vertically left list-item3",
+                "highlight" : [ "list-item2", "list-item3" ]
+              } ]
+            }, {
+              "name" : "list-item3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 31
+                },
+                "name" : "text contains \"Unos\"",
+                "highlight" : [ "list-item3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 46
+                },
+                "name" : "above list-item4",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "list-item3",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "list-item4",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "11px"
+                } ],
+                "highlight" : [ "list-item3", "list-item4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "aligned vertically left list-item4",
+                "highlight" : [ "list-item3", "list-item4" ]
+              } ]
+            }, {
+              "name" : "list-item4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 33
+                },
+                "name" : "text contains \"Rezervacije\"",
+                "highlight" : [ "list-item4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 34
+                },
+                "name" : "css text-decoration-line is \"none\"",
+                "highlight" : [ "list-item4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 46
+                },
+                "name" : "above list-item5",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "list-item4",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "list-item5",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "11px"
+                } ],
+                "highlight" : [ "list-item4", "list-item5" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "aligned vertically left list-item5",
+                "highlight" : [ "list-item4", "list-item5" ]
+              } ]
+            }, {
+              "name" : "list-item5",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 36
+                },
+                "name" : "text contains \"Osobe\"",
+                "highlight" : [ "list-item5" ]
+              } ]
+            }, {
+              "name" : "ul",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 38
+                },
+                "name" : "css list-style-type is \"none\"",
+                "highlight" : [ "ul" ]
+              } ]
+            }, {
+              "name" : "meni",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 40
+                },
+                "name" : "inside screen 100px top",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "meni",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "screen",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "100px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "meni", "screen" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 41
+                },
+                "name" : "above sadrzaj 5px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "meni",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "sadrzaj",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "5px",
+                  "realDistance" : "5px"
+                } ],
+                "highlight" : [ "meni", "sadrzaj" ]
+              } ]
+            }, {
+              "name" : "comments",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 43
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            } ]
+          }, {
+            "name" : "Main section",
+            "place" : {
+              "filePath" : "mobileRezervacija.gspec",
+              "lineNumber" : 48
+            },
+            "objects" : [ {
+              "name" : "grid-container",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 50
+                },
+                "name" : "css display is \"grid\"",
+                "highlight" : [ "grid-container" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 52
+                },
+                "name" : "css background-color is \"rgba(98, 205, 238, 0.8)\"",
+                "highlight" : [ "grid-container" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 53
+                },
+                "name" : "inside sadrzaj",
+                "meta" : [ ],
+                "highlight" : [ "grid-container", "sadrzaj" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 54
+                },
+                "name" : "above dugmad",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "grid-container",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "dugmad",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "8px"
+                } ],
+                "highlight" : [ "grid-container", "dugmad" ]
+              } ]
+            }, {
+              "name" : "global",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 56
+                },
+                "name" : "count any grid-item* is 37",
+                "highlight" : [ "grid-item26", "grid-item27", "grid-item24", "grid-item25", "grid-item22", "grid-item23", "grid-item20", "grid-item21", "grid-item19", "grid-item17", "grid-item18", "grid-item2", "grid-item3", "grid-item30", "grid-item4", "grid-item5", "grid-item6", "grid-item7", "grid-item8", "grid-item9", "grid-item15", "grid-item37", "grid-item16", "grid-item13", "grid-item35", "grid-item14", "grid-item36", "grid-item11", "grid-item33", "grid-item12", "grid-item34", "grid-item31", "grid-item1", "grid-item10", "grid-item32", "grid-item28", "grid-item29" ]
+              } ]
+            }, {
+              "name" : "grid-item1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 59
+                },
+                "name" : "css background-color is \"rgba(0, 0, 0, 0)\"",
+                "highlight" : [ "grid-item1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 60
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item1" ]
+              } ]
+            }, {
+              "name" : "grid-item2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 59
+                },
+                "name" : "css background-color is \"rgba(0, 0, 0, 0)\"",
+                "highlight" : [ "grid-item2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 60
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item2" ]
+              } ]
+            }, {
+              "name" : "grid-item3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 59
+                },
+                "name" : "css background-color is \"rgba(0, 0, 0, 0)\"",
+                "highlight" : [ "grid-item3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 60
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item3" ]
+              } ]
+            }, {
+              "name" : "grid-item4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 59
+                },
+                "name" : "css background-color is \"rgba(0, 0, 0, 0)\"",
+                "highlight" : [ "grid-item4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 60
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item4" ]
+              } ]
+            }, {
+              "name" : "grid-item5",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 59
+                },
+                "name" : "css background-color is \"rgba(0, 0, 0, 0)\"",
+                "highlight" : [ "grid-item5" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 60
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item5" ]
+              } ]
+            }, {
+              "name" : "grid-item6",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 59
+                },
+                "name" : "css background-color is \"rgba(0, 0, 0, 0)\"",
+                "highlight" : [ "grid-item6" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 60
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item6" ]
+              } ]
+            }, {
+              "name" : "grid-item7",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 59
+                },
+                "name" : "css background-color is \"rgba(0, 0, 0, 0)\"",
+                "highlight" : [ "grid-item7" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 60
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item7" ]
+              } ]
+            }, {
+              "name" : "grid-item8",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 63
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item8" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item8" ]
+              } ]
+            }, {
+              "name" : "grid-item9",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 63
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item9" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item9" ]
+              } ]
+            }, {
+              "name" : "grid-item10",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 63
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item10" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item10" ]
+              } ]
+            }, {
+              "name" : "slobodna",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 66
+                },
+                "name" : "css background-color is \"rgb(24, 206, 18)\"",
+                "highlight" : [ "slobodna" ]
+              } ]
+            }, {
+              "name" : "zauzeta",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 69
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "prethodni",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 71
+                },
+                "name" : "css background-color is \"rgba(98, 205, 238, 0.8)\"",
+                "highlight" : [ "prethodni" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 72
+                },
+                "name" : "left-of sljedeci",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "prethodni",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "sljedeci",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "8px"
+                } ],
+                "highlight" : [ "prethodni", "sljedeci" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 73
+                },
+                "name" : "inside dugmad",
+                "meta" : [ ],
+                "highlight" : [ "prethodni", "dugmad" ]
+              } ]
+            }, {
+              "name" : "sljedeci",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 75
+                },
+                "name" : "css background-color is \"rgba(98, 205, 238, 0.8)\"",
+                "highlight" : [ "sljedeci" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 76
+                },
+                "name" : "css position is \"absolute\"",
+                "highlight" : [ "sljedeci" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 77
+                },
+                "name" : "right-of prethodni",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "sljedeci",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "prethodni",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "8px"
+                } ],
+                "highlight" : [ "sljedeci", "prethodni" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 78
+                },
+                "name" : "inside dugmad",
+                "meta" : [ ],
+                "highlight" : [ "sljedeci", "dugmad" ]
+              } ]
+            }, {
+              "name" : "select",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 80
+                },
+                "name" : "above input1",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "select",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input1",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "14px"
+                } ],
+                "highlight" : [ "select", "input1" ]
+              } ]
+            }, {
+              "name" : "input1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 83
+                },
+                "name" : "above input2",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input1",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input2",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "14px"
+                } ],
+                "highlight" : [ "input1", "input2" ]
+              } ]
+            }, {
+              "name" : "input2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 83
+                },
+                "name" : "above input3",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input2",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input3",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "14px"
+                } ],
+                "highlight" : [ "input2", "input3" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "select" : {
+              "area" : [ 13, 371, 53, 19 ]
+            },
+            "grid-item26" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "screen" : {
+              "area" : [ 0, 0, 572, 938 ]
+            },
+            "grid-item27" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item24" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-container" : {
+              "area" : [ 225, 499, 120, 389 ]
+            },
+            "grid-item25" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item22" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item23" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item20" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item21" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "sljedeci" : {
+              "area" : [ 290, 896, 80, 19 ]
+            },
+            "grid-item19" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item17" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "ul" : {
+              "area" : [ 13, 205, 544, 142 ]
+            },
+            "grid-item18" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "logo" : {
+              "area" : [ 236, 50, 100, 100 ]
+            },
+            "grid-item2" : {
+              "area" : [ 238, 605, 43, 36 ]
+            },
+            "grid-item3" : {
+              "area" : [ 238, 652, 43, 36 ]
+            },
+            "grid-item4" : {
+              "area" : [ 238, 699, 43, 36 ]
+            },
+            "grid-item5" : {
+              "area" : [ 238, 746, 43, 36 ]
+            },
+            "grid-item6" : {
+              "area" : [ 238, 792, 43, 36 ]
+            },
+            "grid-item7" : {
+              "area" : [ 238, 839, 43, 36 ]
+            },
+            "grid-item8" : {
+              "area" : [ 291, 746, 43, 36 ]
+            },
+            "grid-item9" : {
+              "area" : [ 291, 792, 43, 36 ]
+            },
+            "grid-item15" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item16" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item13" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item14" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item11" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item12" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item1" : {
+              "area" : [ 238, 558, 43, 36 ]
+            },
+            "grid-item10" : {
+              "area" : [ 291, 839, 43, 36 ]
+            },
+            "list-item1" : {
+              "area" : [ 18, 211, 50, 17 ]
+            },
+            "input3" : {
+              "area" : [ 13, 464, 72, 20 ]
+            },
+            "input2" : {
+              "area" : [ 13, 430, 72, 20 ]
+            },
+            "input1" : {
+              "area" : [ 13, 404, 12, 12 ]
+            },
+            "prethodni" : {
+              "area" : [ 202, 896, 80, 19 ]
+            },
+            "list-item5" : {
+              "area" : [ 18, 324, 40, 17 ]
+            },
+            "list-item4" : {
+              "area" : [ 18, 296, 75, 17 ]
+            },
+            "list-item3" : {
+              "area" : [ 18, 268, 33, 17 ]
+            },
+            "list-item2" : {
+              "area" : [ 18, 239, 27, 17 ]
+            },
+            "dugmad" : {
+              "area" : [ 202, 896, 168, 19 ]
+            },
+            "meni" : {
+              "area" : [ 8, 100, 556, 253 ]
+            },
+            "grid-item30" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item37" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item35" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item36" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item33" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item34" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "sadrzaj" : {
+              "area" : [ 8, 358, 556, 571 ]
+            },
+            "grid-item31" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item32" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "viewport" : {
+              "area" : [ 0, 0, 572, 688 ]
+            },
+            "grid-item28" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "grid-item29" : {
+              "area" : [ 0, 0, 0, 0 ]
+            },
+            "li" : {
+              "area" : [ 13, 205, 544, 28 ]
+            },
+            "slobodna" : {
+              "area" : [ 293, 766, 38, 13 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1573662439792,
+        "type" : "node"
+      } ],
+      "time" : 1573662435042,
+      "type" : "node"
+    } ]
+  }
+}

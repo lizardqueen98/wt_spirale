@@ -1,0 +1,55 @@
+@objects
+ meni .meni
+ logo .logo
+ sadrzaj .sadrzaj
+ ul .meni ul
+ li .meni ul li
+ list-item* .meni ul li a
+ grid-container .grid-container
+ grid-item* .grid-item
+ img* img
+
+= Header section =
+ logo:
+  width 100px
+  height 100px
+  centered horizontally inside viewport 
+  inside screen 50px top
+ li:
+  css display is "inline"
+ list-item1:
+  text contains "Početna"
+  css text-decoration-line is "none"
+ list-item2:
+  text contains "Sale"
+ list-item3:
+  text contains "Unos"
+ list-item4:
+  text contains "Rezervacije"
+ list-item5:
+  text contains "Osobe"
+ ul:
+  css list-style-type is "none"
+ meni:
+  inside screen 100px top
+  above sadrzaj 5px
+ comments:
+  absent
+ @forEach [list-item*] as link, next as sljedeciLink
+       ${link}:
+           aligned horizontally all ${sljedeciLink}
+= Main section =
+ grid-container:
+  css display is "grid"
+  inside sadrzaj 
+ global:
+  count any grid-item* is 10 
+ @forEach [img*] as image
+       ${image}:
+           width 300px
+           height 300px
+ @forEach [grid-item*] as item
+       ${item}:
+           css align-self is "center"
+           css justify-self is "center"
+           css overflow is "hidden"

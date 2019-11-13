@@ -1,0 +1,83 @@
+@objects
+ meni .meni
+ logo .logo
+ sadrzaj .sadrzaj
+ ul .meni ul
+ li .meni ul li
+ list-item* .meni ul li a
+ grid-container .grid-container
+ grid-item* .grid-item
+ slobodna .slobodna
+ zauzeta .zauzeta
+ prethodni .prethodni
+ sljedeci .sljedeci
+ dugmad .dugmad
+ select select
+ input* input
+
+= Header section =
+ logo:
+  width 100px
+  height 100px
+  centered horizontally inside viewport 
+  inside screen 50px top
+ li:
+  css display is "inline"
+ list-item1:
+  text contains "Početna"
+ list-item2:
+  text contains "Sale"
+ list-item3:
+  text contains "Unos"
+ list-item4:
+  text contains "Rezervacije"
+  css text-decoration-line is "none"
+ list-item5:
+  text contains "Osobe"
+ ul:
+  css list-style-type is "none"
+ meni:
+  inside screen 100px top
+  above sadrzaj 5px
+ comments:
+  absent
+ @forEach [list-item*] as link, next as sljedeciLink
+       ${link}:
+           aligned horizontally all ${sljedeciLink}
+= Main section =
+ grid-container:
+  css display is "grid"
+  #css border-color is "rgb(91, 115, 190)"
+  css background-color is "rgba(98, 205, 238, 0.8)"
+  inside sadrzaj
+  above dugmad
+ global:
+  count any grid-item* is 37
+ @forEach [grid-item*] as item
+       ${item}:
+            css text-align is "center"
+ @for [1 - 7] as index
+        grid-item${index}:
+            css background-color is "rgba(0, 0, 0, 0)"
+ @for [8 - 37] as index
+        grid-item${index}:
+            css background-color is "rgb(255, 255, 255)"
+ slobodna:
+  css background-color is "rgb(24, 206, 18)"
+ zauzeta:
+  css background-color is "rgb(247, 14, 14)"
+ prethodni:
+  css background-color is "rgba(98, 205, 238, 0.8)"
+  left-of sljedeci
+  inside dugmad
+ sljedeci:
+  css background-color is "rgba(98, 205, 238, 0.8)"
+  css position is "absolute"
+  right-of prethodni
+  inside dugmad
+ select:
+  above input1
+ @forEach [input*] as ulaz, next as sljedeciUlaz
+       ${ulaz}:
+           above ${sljedeciUlaz}
+            

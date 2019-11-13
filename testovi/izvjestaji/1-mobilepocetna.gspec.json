@@ -1,0 +1,1194 @@
+{
+  "testId" : "1-mobilepocetna.gspec",
+  "name" : "mobilePocetna.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Simple check",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  mobilePocetna.gspec --url http://localhost/pocetna.html --size 600x768 --htmlreport izvjestaji",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: mobilePocetna.gspec included tags: ",
+          "status" : "info",
+          "time" : 1573662481475,
+          "sections" : [ {
+            "name" : "Header section",
+            "place" : {
+              "filePath" : "mobilePocetna.gspec",
+              "lineNumber" : 12
+            },
+            "objects" : [ {
+              "name" : "logo",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 14
+                },
+                "name" : "width 100px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "100px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 15
+                },
+                "name" : "height 100px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "100px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "centered horizontally inside viewport",
+                "highlight" : [ "logo", "viewport" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "inside screen 50px top",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "screen",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "50px",
+                  "realDistance" : "50px"
+                } ],
+                "highlight" : [ "logo", "screen" ]
+              } ]
+            }, {
+              "name" : "li",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 19
+                },
+                "name" : "css display is \"block\"",
+                "highlight" : [ "li" ]
+              } ]
+            }, {
+              "name" : "list-item1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 21
+                },
+                "name" : "text contains \"PoÄ?etna\"",
+                "highlight" : [ "list-item1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 22
+                },
+                "name" : "css text-decoration-line is \"none\"",
+                "highlight" : [ "list-item1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 40
+                },
+                "name" : "above list-item2",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "list-item1",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "list-item2",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "11px"
+                } ],
+                "highlight" : [ "list-item1", "list-item2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 41
+                },
+                "name" : "aligned vertically left list-item2",
+                "highlight" : [ "list-item1", "list-item2" ]
+              } ]
+            }, {
+              "name" : "list-item2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 24
+                },
+                "name" : "text contains \"Sale\"",
+                "highlight" : [ "list-item2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 40
+                },
+                "name" : "above list-item3",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "list-item2",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "list-item3",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "12px"
+                } ],
+                "highlight" : [ "list-item2", "list-item3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 41
+                },
+                "name" : "aligned vertically left list-item3",
+                "highlight" : [ "list-item2", "list-item3" ]
+              } ]
+            }, {
+              "name" : "list-item3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 26
+                },
+                "name" : "text contains \"Unos\"",
+                "highlight" : [ "list-item3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 40
+                },
+                "name" : "above list-item4",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "list-item3",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "list-item4",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "11px"
+                } ],
+                "highlight" : [ "list-item3", "list-item4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 41
+                },
+                "name" : "aligned vertically left list-item4",
+                "highlight" : [ "list-item3", "list-item4" ]
+              } ]
+            }, {
+              "name" : "list-item4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 28
+                },
+                "name" : "text contains \"Rezervacije\"",
+                "highlight" : [ "list-item4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 40
+                },
+                "name" : "above list-item5",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "list-item4",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "list-item5",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "11px"
+                } ],
+                "highlight" : [ "list-item4", "list-item5" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 41
+                },
+                "name" : "aligned vertically left list-item5",
+                "highlight" : [ "list-item4", "list-item5" ]
+              } ]
+            }, {
+              "name" : "list-item5",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 30
+                },
+                "name" : "text contains \"Osobe\"",
+                "highlight" : [ "list-item5" ]
+              } ]
+            }, {
+              "name" : "ul",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 32
+                },
+                "name" : "css list-style-type is \"none\"",
+                "highlight" : [ "ul" ]
+              } ]
+            }, {
+              "name" : "meni",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 34
+                },
+                "name" : "inside screen 100px top",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "meni",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "screen",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "100px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "meni", "screen" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 35
+                },
+                "name" : "above sadrzaj 5px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "meni",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "sadrzaj",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "5px",
+                  "realDistance" : "5px"
+                } ],
+                "highlight" : [ "meni", "sadrzaj" ]
+              } ]
+            }, {
+              "name" : "comments",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 37
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            } ]
+          }, {
+            "name" : "Main section",
+            "place" : {
+              "filePath" : "mobilePocetna.gspec",
+              "lineNumber" : 42
+            },
+            "objects" : [ {
+              "name" : "grid-container",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 44
+                },
+                "name" : "css display is \"grid\"",
+                "highlight" : [ "grid-container" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 45
+                },
+                "name" : "inside sadrzaj",
+                "meta" : [ ],
+                "highlight" : [ "grid-container", "sadrzaj" ]
+              } ]
+            }, {
+              "name" : "global",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "count any grid-item* is 10",
+                "highlight" : [ "grid-item2", "grid-item3", "grid-item4", "grid-item5", "grid-item6", "grid-item7", "grid-item8", "grid-item9", "grid-item1", "grid-item10" ]
+              } ]
+            }, {
+              "name" : "img1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 50
+                },
+                "name" : "width 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img1",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "img1",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 51
+                },
+                "name" : "height 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img1",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img1",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img1" ]
+              } ]
+            }, {
+              "name" : "img2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 50
+                },
+                "name" : "width 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img2",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "img2",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 51
+                },
+                "name" : "height 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img2",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img2",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img2" ]
+              } ]
+            }, {
+              "name" : "img3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 50
+                },
+                "name" : "width 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img3",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "img3",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 51
+                },
+                "name" : "height 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img3",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img3",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img3" ]
+              } ]
+            }, {
+              "name" : "img4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 50
+                },
+                "name" : "width 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img4",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "img4",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 51
+                },
+                "name" : "height 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img4",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img4",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img4" ]
+              } ]
+            }, {
+              "name" : "img5",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 50
+                },
+                "name" : "width 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img5",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "img5",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img5" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 51
+                },
+                "name" : "height 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img5",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img5",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img5" ]
+              } ]
+            }, {
+              "name" : "img6",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 50
+                },
+                "name" : "width 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img6",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "img6",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img6" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 51
+                },
+                "name" : "height 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img6",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img6",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img6" ]
+              } ]
+            }, {
+              "name" : "img7",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 50
+                },
+                "name" : "width 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img7",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "img7",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img7" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 51
+                },
+                "name" : "height 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img7",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img7",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img7" ]
+              } ]
+            }, {
+              "name" : "img8",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 50
+                },
+                "name" : "width 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img8",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "img8",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img8" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 51
+                },
+                "name" : "height 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img8",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img8",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img8" ]
+              } ]
+            }, {
+              "name" : "img9",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 50
+                },
+                "name" : "width 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img9",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "img9",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img9" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 51
+                },
+                "name" : "height 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img9",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img9",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img9" ]
+              } ]
+            }, {
+              "name" : "img10",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 50
+                },
+                "name" : "width 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img10",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "img10",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img10" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 51
+                },
+                "name" : "height 240px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img10",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img10",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "240px",
+                  "realDistance" : "240px"
+                } ],
+                "highlight" : [ "img10" ]
+              } ]
+            }, {
+              "name" : "grid-item1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 54
+                },
+                "name" : "css align-self is \"center\"",
+                "highlight" : [ "grid-item1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 55
+                },
+                "name" : "css justify-self is \"center\"",
+                "highlight" : [ "grid-item1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 56
+                },
+                "name" : "css overflow is \"hidden\"",
+                "highlight" : [ "grid-item1" ]
+              } ]
+            }, {
+              "name" : "grid-item2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 54
+                },
+                "name" : "css align-self is \"center\"",
+                "highlight" : [ "grid-item2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 55
+                },
+                "name" : "css justify-self is \"center\"",
+                "highlight" : [ "grid-item2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 56
+                },
+                "name" : "css overflow is \"hidden\"",
+                "highlight" : [ "grid-item2" ]
+              } ]
+            }, {
+              "name" : "grid-item3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 54
+                },
+                "name" : "css align-self is \"center\"",
+                "highlight" : [ "grid-item3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 55
+                },
+                "name" : "css justify-self is \"center\"",
+                "highlight" : [ "grid-item3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 56
+                },
+                "name" : "css overflow is \"hidden\"",
+                "highlight" : [ "grid-item3" ]
+              } ]
+            }, {
+              "name" : "grid-item4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 54
+                },
+                "name" : "css align-self is \"center\"",
+                "highlight" : [ "grid-item4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 55
+                },
+                "name" : "css justify-self is \"center\"",
+                "highlight" : [ "grid-item4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 56
+                },
+                "name" : "css overflow is \"hidden\"",
+                "highlight" : [ "grid-item4" ]
+              } ]
+            }, {
+              "name" : "grid-item5",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 54
+                },
+                "name" : "css align-self is \"center\"",
+                "highlight" : [ "grid-item5" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 55
+                },
+                "name" : "css justify-self is \"center\"",
+                "highlight" : [ "grid-item5" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 56
+                },
+                "name" : "css overflow is \"hidden\"",
+                "highlight" : [ "grid-item5" ]
+              } ]
+            }, {
+              "name" : "grid-item6",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 54
+                },
+                "name" : "css align-self is \"center\"",
+                "highlight" : [ "grid-item6" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 55
+                },
+                "name" : "css justify-self is \"center\"",
+                "highlight" : [ "grid-item6" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 56
+                },
+                "name" : "css overflow is \"hidden\"",
+                "highlight" : [ "grid-item6" ]
+              } ]
+            }, {
+              "name" : "grid-item7",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 54
+                },
+                "name" : "css align-self is \"center\"",
+                "highlight" : [ "grid-item7" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 55
+                },
+                "name" : "css justify-self is \"center\"",
+                "highlight" : [ "grid-item7" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 56
+                },
+                "name" : "css overflow is \"hidden\"",
+                "highlight" : [ "grid-item7" ]
+              } ]
+            }, {
+              "name" : "grid-item8",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 54
+                },
+                "name" : "css align-self is \"center\"",
+                "highlight" : [ "grid-item8" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 55
+                },
+                "name" : "css justify-self is \"center\"",
+                "highlight" : [ "grid-item8" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 56
+                },
+                "name" : "css overflow is \"hidden\"",
+                "highlight" : [ "grid-item8" ]
+              } ]
+            }, {
+              "name" : "grid-item9",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 54
+                },
+                "name" : "css align-self is \"center\"",
+                "highlight" : [ "grid-item9" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 55
+                },
+                "name" : "css justify-self is \"center\"",
+                "highlight" : [ "grid-item9" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 56
+                },
+                "name" : "css overflow is \"hidden\"",
+                "highlight" : [ "grid-item9" ]
+              } ]
+            }, {
+              "name" : "grid-item10",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 54
+                },
+                "name" : "css align-self is \"center\"",
+                "highlight" : [ "grid-item10" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 55
+                },
+                "name" : "css justify-self is \"center\"",
+                "highlight" : [ "grid-item10" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna.gspec",
+                  "lineNumber" : 56
+                },
+                "name" : "css overflow is \"hidden\"",
+                "highlight" : [ "grid-item10" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "list-item1" : {
+              "area" : [ 18, 211, 50, 17 ]
+            },
+            "screen" : {
+              "area" : [ 0, 0, 572, 2894 ]
+            },
+            "grid-container" : {
+              "area" : [ 8, 359, 554, 2526 ]
+            },
+            "ul" : {
+              "area" : [ 13, 205, 544, 142 ]
+            },
+            "img10" : {
+              "area" : [ 166, 2634, 240, 240 ]
+            },
+            "logo" : {
+              "area" : [ 236, 50, 100, 100 ]
+            },
+            "list-item5" : {
+              "area" : [ 18, 324, 40, 17 ]
+            },
+            "list-item4" : {
+              "area" : [ 18, 296, 75, 17 ]
+            },
+            "list-item3" : {
+              "area" : [ 18, 268, 33, 17 ]
+            },
+            "list-item2" : {
+              "area" : [ 18, 239, 27, 17 ]
+            },
+            "meni" : {
+              "area" : [ 8, 100, 556, 253 ]
+            },
+            "grid-item2" : {
+              "area" : [ 165, 621, 241, 241 ]
+            },
+            "img4" : {
+              "area" : [ 166, 1125, 240, 240 ]
+            },
+            "grid-item3" : {
+              "area" : [ 165, 872, 241, 241 ]
+            },
+            "img3" : {
+              "area" : [ 166, 873, 240, 240 ]
+            },
+            "grid-item4" : {
+              "area" : [ 165, 1124, 241, 241 ]
+            },
+            "img6" : {
+              "area" : [ 166, 1628, 240, 240 ]
+            },
+            "grid-item5" : {
+              "area" : [ 165, 1375, 241, 241 ]
+            },
+            "img5" : {
+              "area" : [ 166, 1376, 240, 240 ]
+            },
+            "grid-item6" : {
+              "area" : [ 165, 1627, 241, 241 ]
+            },
+            "img8" : {
+              "area" : [ 166, 2131, 240, 240 ]
+            },
+            "grid-item7" : {
+              "area" : [ 165, 1879, 241, 241 ]
+            },
+            "img7" : {
+              "area" : [ 166, 1879, 240, 240 ]
+            },
+            "grid-item8" : {
+              "area" : [ 165, 2130, 241, 241 ]
+            },
+            "grid-item9" : {
+              "area" : [ 165, 2382, 241, 241 ]
+            },
+            "img9" : {
+              "area" : [ 166, 2383, 240, 240 ]
+            },
+            "sadrzaj" : {
+              "area" : [ 8, 358, 556, 2527 ]
+            },
+            "grid-item1" : {
+              "area" : [ 165, 369, 241, 241 ]
+            },
+            "grid-item10" : {
+              "area" : [ 165, 2633, 241, 241 ]
+            },
+            "viewport" : {
+              "area" : [ 0, 0, 572, 688 ]
+            },
+            "li" : {
+              "area" : [ 13, 205, 544, 28 ]
+            },
+            "img2" : {
+              "area" : [ 166, 621, 240, 240 ]
+            },
+            "img1" : {
+              "area" : [ 166, 370, 240, 240 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1573662478309,
+        "type" : "node"
+      } ],
+      "time" : 1573662473459,
+      "type" : "node"
+    } ]
+  }
+}

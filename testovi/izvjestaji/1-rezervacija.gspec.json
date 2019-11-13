@@ -1,0 +1,1402 @@
+{
+  "testId" : "1-rezervacija.gspec",
+  "name" : "rezervacija.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Simple check",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  rezervacija.gspec --url http://localhost/rezervacija.html --size 1024x768 --htmlreport izvjestaji",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: rezervacija.gspec included tags: ",
+          "status" : "info",
+          "time" : 1573662529484,
+          "sections" : [ {
+            "name" : "Header section",
+            "place" : {
+              "filePath" : "rezervacija.gspec",
+              "lineNumber" : 18
+            },
+            "objects" : [ {
+              "name" : "logo",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 20
+                },
+                "name" : "width 100px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "100px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 21
+                },
+                "name" : "height 100px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "100px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 22
+                },
+                "name" : "centered horizontally inside viewport",
+                "highlight" : [ "logo", "viewport" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 23
+                },
+                "name" : "inside screen 50px top",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "screen",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "50px",
+                  "realDistance" : "50px"
+                } ],
+                "highlight" : [ "logo", "screen" ]
+              } ]
+            }, {
+              "name" : "li",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "css display is \"inline\"",
+                "highlight" : [ "li" ]
+              } ]
+            }, {
+              "name" : "list-item1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 27
+                },
+                "name" : "text contains \"PoÄ?etna\"",
+                "highlight" : [ "list-item1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 46
+                },
+                "name" : "aligned horizontally all list-item2",
+                "highlight" : [ "list-item1", "list-item2" ]
+              } ]
+            }, {
+              "name" : "list-item2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 29
+                },
+                "name" : "text contains \"Sale\"",
+                "highlight" : [ "list-item2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 46
+                },
+                "name" : "aligned horizontally all list-item3",
+                "highlight" : [ "list-item2", "list-item3" ]
+              } ]
+            }, {
+              "name" : "list-item3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 31
+                },
+                "name" : "text contains \"Unos\"",
+                "highlight" : [ "list-item3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 46
+                },
+                "name" : "aligned horizontally all list-item4",
+                "highlight" : [ "list-item3", "list-item4" ]
+              } ]
+            }, {
+              "name" : "list-item4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 33
+                },
+                "name" : "text contains \"Rezervacije\"",
+                "highlight" : [ "list-item4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 34
+                },
+                "name" : "css text-decoration-line is \"none\"",
+                "highlight" : [ "list-item4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 46
+                },
+                "name" : "aligned horizontally all list-item5",
+                "highlight" : [ "list-item4", "list-item5" ]
+              } ]
+            }, {
+              "name" : "list-item5",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 36
+                },
+                "name" : "text contains \"Osobe\"",
+                "highlight" : [ "list-item5" ]
+              } ]
+            }, {
+              "name" : "ul",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 38
+                },
+                "name" : "css list-style-type is \"none\"",
+                "highlight" : [ "ul" ]
+              } ]
+            }, {
+              "name" : "meni",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 40
+                },
+                "name" : "inside screen 100px top",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "meni",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "screen",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "100px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "meni", "screen" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 41
+                },
+                "name" : "above sadrzaj 5px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "meni",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "sadrzaj",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "5px",
+                  "realDistance" : "5px"
+                } ],
+                "highlight" : [ "meni", "sadrzaj" ]
+              } ]
+            }, {
+              "name" : "comments",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 43
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            } ]
+          }, {
+            "name" : "Main section",
+            "place" : {
+              "filePath" : "rezervacija.gspec",
+              "lineNumber" : 47
+            },
+            "objects" : [ {
+              "name" : "grid-container",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 49
+                },
+                "name" : "css display is \"grid\"",
+                "highlight" : [ "grid-container" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 51
+                },
+                "name" : "css background-color is \"rgba(98, 205, 238, 0.8)\"",
+                "highlight" : [ "grid-container" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 52
+                },
+                "name" : "inside sadrzaj",
+                "meta" : [ ],
+                "highlight" : [ "grid-container", "sadrzaj" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 53
+                },
+                "name" : "above dugmad",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "grid-container",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "dugmad",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "8px"
+                } ],
+                "highlight" : [ "grid-container", "dugmad" ]
+              } ]
+            }, {
+              "name" : "global",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 55
+                },
+                "name" : "count any grid-item* is 37",
+                "highlight" : [ "grid-item26", "grid-item27", "grid-item24", "grid-item25", "grid-item22", "grid-item23", "grid-item20", "grid-item21", "grid-item19", "grid-item17", "grid-item18", "grid-item2", "grid-item3", "grid-item30", "grid-item4", "grid-item5", "grid-item6", "grid-item7", "grid-item8", "grid-item9", "grid-item15", "grid-item37", "grid-item16", "grid-item13", "grid-item35", "grid-item14", "grid-item36", "grid-item11", "grid-item33", "grid-item12", "grid-item34", "grid-item31", "grid-item1", "grid-item10", "grid-item32", "grid-item28", "grid-item29" ]
+              } ]
+            }, {
+              "name" : "grid-item1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 61
+                },
+                "name" : "css background-color is \"rgba(0, 0, 0, 0)\"",
+                "highlight" : [ "grid-item1" ]
+              } ]
+            }, {
+              "name" : "grid-item2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 61
+                },
+                "name" : "css background-color is \"rgba(0, 0, 0, 0)\"",
+                "highlight" : [ "grid-item2" ]
+              } ]
+            }, {
+              "name" : "grid-item3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 61
+                },
+                "name" : "css background-color is \"rgba(0, 0, 0, 0)\"",
+                "highlight" : [ "grid-item3" ]
+              } ]
+            }, {
+              "name" : "grid-item4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 61
+                },
+                "name" : "css background-color is \"rgba(0, 0, 0, 0)\"",
+                "highlight" : [ "grid-item4" ]
+              } ]
+            }, {
+              "name" : "grid-item5",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item5" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 61
+                },
+                "name" : "css background-color is \"rgba(0, 0, 0, 0)\"",
+                "highlight" : [ "grid-item5" ]
+              } ]
+            }, {
+              "name" : "grid-item6",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item6" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 61
+                },
+                "name" : "css background-color is \"rgba(0, 0, 0, 0)\"",
+                "highlight" : [ "grid-item6" ]
+              } ]
+            }, {
+              "name" : "grid-item7",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item7" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 61
+                },
+                "name" : "css background-color is \"rgba(0, 0, 0, 0)\"",
+                "highlight" : [ "grid-item7" ]
+              } ]
+            }, {
+              "name" : "grid-item8",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item8" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item8" ]
+              } ]
+            }, {
+              "name" : "grid-item9",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item9" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item9" ]
+              } ]
+            }, {
+              "name" : "grid-item10",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item10" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item10" ]
+              } ]
+            }, {
+              "name" : "grid-item11",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item11" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item11" ]
+              } ]
+            }, {
+              "name" : "grid-item12",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item12" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item12" ]
+              } ]
+            }, {
+              "name" : "grid-item13",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item13" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item13" ]
+              } ]
+            }, {
+              "name" : "grid-item14",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item14" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item14" ]
+              } ]
+            }, {
+              "name" : "grid-item15",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item15" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item15" ]
+              } ]
+            }, {
+              "name" : "grid-item16",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item16" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item16" ]
+              } ]
+            }, {
+              "name" : "grid-item17",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item17" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item17" ]
+              } ]
+            }, {
+              "name" : "grid-item18",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item18" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item18" ]
+              } ]
+            }, {
+              "name" : "grid-item19",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item19" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item19" ]
+              } ]
+            }, {
+              "name" : "grid-item20",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item20" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item20" ]
+              } ]
+            }, {
+              "name" : "grid-item21",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item21" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item21" ]
+              } ]
+            }, {
+              "name" : "grid-item22",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item22" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item22" ]
+              } ]
+            }, {
+              "name" : "grid-item23",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item23" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item23" ]
+              } ]
+            }, {
+              "name" : "grid-item24",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item24" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item24" ]
+              } ]
+            }, {
+              "name" : "grid-item25",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item25" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item25" ]
+              } ]
+            }, {
+              "name" : "grid-item26",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item26" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item26" ]
+              } ]
+            }, {
+              "name" : "grid-item27",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item27" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item27" ]
+              } ]
+            }, {
+              "name" : "grid-item28",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item28" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item28" ]
+              } ]
+            }, {
+              "name" : "grid-item29",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item29" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item29" ]
+              } ]
+            }, {
+              "name" : "grid-item30",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item30" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item30" ]
+              } ]
+            }, {
+              "name" : "grid-item31",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item31" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item31" ]
+              } ]
+            }, {
+              "name" : "grid-item32",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item32" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item32" ]
+              } ]
+            }, {
+              "name" : "grid-item33",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item33" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item33" ]
+              } ]
+            }, {
+              "name" : "grid-item34",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item34" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item34" ]
+              } ]
+            }, {
+              "name" : "grid-item35",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item35" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item35" ]
+              } ]
+            }, {
+              "name" : "grid-item36",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item36" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item36" ]
+              } ]
+            }, {
+              "name" : "grid-item37",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "grid-item37" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "grid-item37" ]
+              } ]
+            }, {
+              "name" : "slobodna",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 66
+                },
+                "name" : "css background-color is \"rgb(24, 206, 18)\"",
+                "highlight" : [ "slobodna" ]
+              } ]
+            }, {
+              "name" : "zauzeta",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 68
+                },
+                "name" : "css background-color is \"rgb(247, 14, 14)\"",
+                "highlight" : [ "zauzeta" ]
+              } ]
+            }, {
+              "name" : "prethodni",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 70
+                },
+                "name" : "css background-color is \"rgba(98, 205, 238, 0.8)\"",
+                "highlight" : [ "prethodni" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 71
+                },
+                "name" : "left-of sljedeci",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "prethodni",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "sljedeci",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "272px"
+                } ],
+                "highlight" : [ "prethodni", "sljedeci" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 72
+                },
+                "name" : "inside dugmad",
+                "meta" : [ ],
+                "highlight" : [ "prethodni", "dugmad" ]
+              } ]
+            }, {
+              "name" : "sljedeci",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 74
+                },
+                "name" : "css background-color is \"rgba(98, 205, 238, 0.8)\"",
+                "highlight" : [ "sljedeci" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 75
+                },
+                "name" : "css position is \"absolute\"",
+                "highlight" : [ "sljedeci" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 76
+                },
+                "name" : "right-of prethodni",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "sljedeci",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "prethodni",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "272px"
+                } ],
+                "highlight" : [ "sljedeci", "prethodni" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 77
+                },
+                "name" : "inside dugmad",
+                "meta" : [ ],
+                "highlight" : [ "sljedeci", "dugmad" ]
+              } ]
+            }, {
+              "name" : "select",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 79
+                },
+                "name" : "above input1",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "select",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input1",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "14px"
+                } ],
+                "highlight" : [ "select", "input1" ]
+              } ]
+            }, {
+              "name" : "input1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 82
+                },
+                "name" : "above input2",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input1",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input2",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "14px"
+                } ],
+                "highlight" : [ "input1", "input2" ]
+              } ]
+            }, {
+              "name" : "input2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "rezervacija.gspec",
+                  "lineNumber" : 82
+                },
+                "name" : "above input3",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input2",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input3",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "14px"
+                } ],
+                "highlight" : [ "input2", "input3" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "select" : {
+              "area" : [ 13, 247, 53, 19 ]
+            },
+            "grid-item26" : {
+              "area" : [ 356, 598, 48, 36 ]
+            },
+            "screen" : {
+              "area" : [ 0, 0, 996, 741 ]
+            },
+            "grid-item27" : {
+              "area" : [ 415, 598, 48, 36 ]
+            },
+            "grid-item24" : {
+              "area" : [ 649, 551, 48, 36 ]
+            },
+            "grid-container" : {
+              "area" : [ 287, 376, 420, 316 ]
+            },
+            "grid-item25" : {
+              "area" : [ 298, 598, 48, 36 ]
+            },
+            "grid-item22" : {
+              "area" : [ 532, 551, 48, 36 ]
+            },
+            "grid-item23" : {
+              "area" : [ 590, 551, 48, 36 ]
+            },
+            "grid-item20" : {
+              "area" : [ 415, 551, 48, 36 ]
+            },
+            "grid-item21" : {
+              "area" : [ 473, 551, 48, 36 ]
+            },
+            "sljedeci" : {
+              "area" : [ 634, 700, 80, 19 ]
+            },
+            "grid-item19" : {
+              "area" : [ 356, 551, 48, 36 ]
+            },
+            "grid-item17" : {
+              "area" : [ 649, 504, 48, 36 ]
+            },
+            "ul" : {
+              "area" : [ 13, 205, 968, 18 ]
+            },
+            "grid-item18" : {
+              "area" : [ 298, 551, 48, 36 ]
+            },
+            "logo" : {
+              "area" : [ 448, 50, 100, 100 ]
+            },
+            "grid-item2" : {
+              "area" : [ 356, 424, 48, 23 ]
+            },
+            "grid-item3" : {
+              "area" : [ 415, 424, 48, 23 ]
+            },
+            "grid-item4" : {
+              "area" : [ 473, 424, 48, 23 ]
+            },
+            "grid-item5" : {
+              "area" : [ 532, 424, 48, 23 ]
+            },
+            "grid-item6" : {
+              "area" : [ 590, 424, 48, 23 ]
+            },
+            "grid-item7" : {
+              "area" : [ 649, 424, 48, 23 ]
+            },
+            "grid-item8" : {
+              "area" : [ 532, 457, 48, 36 ]
+            },
+            "grid-item9" : {
+              "area" : [ 590, 457, 48, 36 ]
+            },
+            "grid-item15" : {
+              "area" : [ 532, 504, 48, 36 ]
+            },
+            "grid-item16" : {
+              "area" : [ 590, 504, 48, 36 ]
+            },
+            "grid-item13" : {
+              "area" : [ 415, 504, 48, 36 ]
+            },
+            "grid-item14" : {
+              "area" : [ 473, 504, 48, 36 ]
+            },
+            "grid-item11" : {
+              "area" : [ 298, 504, 48, 36 ]
+            },
+            "grid-item12" : {
+              "area" : [ 356, 504, 48, 36 ]
+            },
+            "grid-item1" : {
+              "area" : [ 298, 424, 48, 23 ]
+            },
+            "grid-item10" : {
+              "area" : [ 649, 457, 48, 36 ]
+            },
+            "list-item1" : {
+              "area" : [ 18, 206, 50, 17 ]
+            },
+            "input3" : {
+              "area" : [ 13, 340, 72, 20 ]
+            },
+            "input2" : {
+              "area" : [ 13, 306, 72, 20 ]
+            },
+            "input1" : {
+              "area" : [ 13, 280, 12, 12 ]
+            },
+            "prethodni" : {
+              "area" : [ 282, 700, 80, 19 ]
+            },
+            "list-item5" : {
+              "area" : [ 262, 206, 40, 17 ]
+            },
+            "list-item4" : {
+              "area" : [ 172, 206, 75, 17 ]
+            },
+            "list-item3" : {
+              "area" : [ 125, 206, 33, 17 ]
+            },
+            "list-item2" : {
+              "area" : [ 83, 206, 27, 17 ]
+            },
+            "dugmad" : {
+              "area" : [ 282, 700, 432, 19 ]
+            },
+            "meni" : {
+              "area" : [ 8, 100, 980, 130 ]
+            },
+            "grid-item30" : {
+              "area" : [ 590, 598, 48, 36 ]
+            },
+            "grid-item37" : {
+              "area" : [ 590, 644, 48, 36 ]
+            },
+            "grid-item35" : {
+              "area" : [ 473, 644, 48, 36 ]
+            },
+            "grid-item36" : {
+              "area" : [ 532, 644, 48, 36 ]
+            },
+            "grid-item33" : {
+              "area" : [ 356, 644, 48, 36 ]
+            },
+            "grid-item34" : {
+              "area" : [ 415, 644, 48, 36 ]
+            },
+            "sadrzaj" : {
+              "area" : [ 8, 235, 980, 498 ]
+            },
+            "grid-item31" : {
+              "area" : [ 649, 598, 48, 36 ]
+            },
+            "zauzeta" : {
+              "area" : [ 358, 525, 43, 13 ]
+            },
+            "grid-item32" : {
+              "area" : [ 298, 644, 48, 36 ]
+            },
+            "viewport" : {
+              "area" : [ 0, 0, 996, 688 ]
+            },
+            "grid-item28" : {
+              "area" : [ 473, 598, 48, 36 ]
+            },
+            "grid-item29" : {
+              "area" : [ 532, 598, 48, 36 ]
+            },
+            "li" : {
+              "area" : [ 13, 201, 60, 27 ]
+            },
+            "slobodna" : {
+              "area" : [ 534, 478, 43, 13 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1573662523658,
+        "type" : "node"
+      } ],
+      "time" : 1573662518889,
+      "type" : "node"
+    } ]
+  }
+}
