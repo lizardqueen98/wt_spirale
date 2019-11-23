@@ -18,7 +18,7 @@
 </ul>
 </div>
 <div class="sadrzaj">
-        <select class="margine">
+        <select class="margine" id="select" onchange="promjenaVrijednosti()">
                 <option value="0-01">0-01</option>
                 <option value="1-01">1-01</option>
                 <option value="0-02">0-02</option>
@@ -44,15 +44,15 @@
                 <option value="EE2">EE2</option>
               </select>
               <br>
-              <input class="margine" type="checkbox"> 
+              <input class="margine" type="checkbox" id="checkbox" onchange="promjenaVrijednosti()"> 
               <label >Rezervacija je periodična</label>
               <br>
-              <input type="time" name="pocetak" class="margine">
+              <input type="time" name="pocetak" class="margine" id="pocetak" onchange="promjenaVrijednosti()">
               <br>
-              <input type="time" name="kraj" class="margine">
+              <input type="time" name="kraj" class="margine" id="kraj" onchange="promjenaVrijednosti()">
               <br>
-              <div class="grid-container margine">
-                <div class="novembar">
+              <div class="grid-container margine" id="kalendar" onchange="promjenaVrijednosti()">
+                <div class="mjesec" id="mjesec">
                         Novembar
                 </div>
                 <div class="grid-item dani">PON</div>
@@ -159,9 +159,11 @@
                 </div>
               </div>
               <div class="margine dugmad">
-              <button type="button" class="prethodni">Prethodni</button>
-              <button type="button" class="sljedeci">Sljedeći</button>
+              <button type="button" class="prethodni" onclick="prethodniMjesec()" id="prethodni">Prethodni</button>
+              <button type="button" class="sljedeci" onclick="sljedeciMjesec()" id="sljedeci">Sljedeći</button>
               </div>
 </div>
+<script src="kalendar.js"></script>
+<!-- mislim da ovo ne treba<script src="test.js"></script>-->
 </BODY>
 </HTML>
