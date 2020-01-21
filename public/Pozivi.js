@@ -13,13 +13,15 @@ let Pozivi = (function(){
     ajax.onreadystatechange = function() {// Anonimna funkcija
 	if (ajax.readyState == 4 && ajax.status == 200){
         var objekat = JSON.parse(ajax.responseText);
+        //console.log(ajax.responseText);
         Kalendar.ucitajPodatke(objekat.periodicna, objekat.vanredna);
         }
     }
-    ajax.open("GET", "zauzeca.json", true);
+    //ajax.open("GET", "zauzeca.json", true);
+    ajax.open("GET", "zauzeca", true);
     ajax.send();
     }
-    function z2Impl(naziv, dan, mjesec, pocetak, kraj, periodicno){
+    function z2Impl(naziv, dan, mjesec, pocetak, kraj, periodicno, predavac){
     //implementacija ide ovdje
     var mjeseci = {Januar:1, Februar:2, Mart:3, April:4, Maj:5, Juni:6, Juli:7, August:8, Septembar:9, Oktobar:10, Novembar:11, Decembar:12};
     var ajax = new XMLHttpRequest();
@@ -29,7 +31,7 @@ let Pozivi = (function(){
             if(objekat.alert){
                 delete objekat.alert;
                 var datumAlert = dan + '.' + mjeseci[mjesec] + '.' + godina;
-                alert("Nije moguće rezervisati salu " +  naziv + " za navedeni datum " + datumAlert + " i termin od " +  pocetak + " do " +  kraj);
+                alert("Nije moguće rezervisati salu " +  naziv + " za navedeni datum " + datumAlert + " i termin od " +  pocetak + " do " +  kraj + " od predavaca " + predavac);
             }
             Kalendar.ucitajPodatke(objekat.periodicna, objekat.vanredna);
             //isto funkcija iz kalendara
@@ -57,7 +59,7 @@ let Pozivi = (function(){
             pocetak: pocetak,
             kraj: kraj,
             naziv: naziv,
-            predavac: "NB"
+            predavac: predavac
         }
     }
     else{
@@ -67,7 +69,7 @@ let Pozivi = (function(){
             pocetak: pocetak,
             kraj: kraj,
             naziv: naziv,
-            predavac: "NB"
+            predavac: predavac
         }
     }
     ajax.send(JSON.stringify(objekat));
@@ -141,11 +143,67 @@ let Pozivi = (function(){
         }
         document.getElementById("slike").innerHTML = unutrasnjiHtml;
     }
+    function ucitajOsobljeImp(){
+        var ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function() {// Anonimna funkcija
+	    if (ajax.readyState == 4 && ajax.status == 200){
+            var osobe = JSON.parse(ajax.responseText);
+            //console.log(osobe);
+            var osobeHtml = "<select>";
+            osobe.forEach(osoba => {
+                //console.log(osoba.ime);
+                osobeHtml += "<option value='" + osoba.ime + "'>" + osoba.ime + " " + osoba.prezime + "</option>";
+            });
+            osobeHtml += "</select>";
+            document.getElementById("osoblje").innerHTML = osobeHtml;
+        }
+    }
+    ajax.open("GET", "osoblje", true);
+    ajax.send();
+    }
+    function ucitajZauzecaImp(){
+        var ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function() {// Anonimna funkcija
+	    if (ajax.readyState == 4 && ajax.status == 200){
+            //kod ua zbacivanje u html
+            var osobeSale = "";
+            var objekat = JSON.parse(ajax.responseText);
+            objekat.forEach(o => {
+                osobeSale += "<label>" + o.predavac + "</label><label>" + o.naziv + "</label><br>";
+            });
+            //console.log(objekat);
+            document.getElementById("sadrzaj").innerHTML = osobeSale;
+        }
+    }
+    ajax.open("GET", "rezervacije", true);
+    ajax.send();
+    }
+    function ucitajSaleImp(){
+        var ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function() {// Anonimna funkcija
+            if (ajax.readyState == 4 && ajax.status == 200){
+                var sale = JSON.parse(ajax.responseText);
+                //console.log(sale);
+                var saleHtml = "<select>";
+                sale.forEach(sala => {
+                    //console.log(osoba.ime);
+                    saleHtml += "<option value='" + sala.naziv + "'>" + sala.naziv + "</option>";
+                });
+                saleHtml += "</select>";
+                document.getElementById("select").innerHTML = saleHtml;
+            }
+    }
+    ajax.open("GET", "sale", true);
+    ajax.send();
+    }
     return {
     z1: z1Impl,
     z2: z2Impl,
     z3Ucitavanje: z3UcitavanjeImp,
-    z3Kesiranje: z3KesiranjeImp
+    z3Kesiranje: z3KesiranjeImp,
+    ucitajOsoblje: ucitajOsobljeImp,
+    ucitajZauzeca: ucitajZauzecaImp,
+    ucitajSale: ucitajSaleImp
     }
     }());
     

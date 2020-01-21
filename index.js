@@ -2,6 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const fs = require('fs');
+// za bazu
+const db = require('./db.js')
+const { Op } = require("sequelize");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -9,11 +12,185 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 //__dirname tells you the absolute path of the directory containing the currently executing file.
 
-app.get('/zauzeca.json',function(req,res){
-    res.sendFile(__dirname+"/zauzeca.json");
+//app.get('/zauzeca.json',function(req,res){
+app.get('/zauzeca',function(req,res){
+    //res.sendFile(__dirname+"/zauzeca.json"); sad se dohvaca iz baze
+    var objekat = {};
+    var tempObjekat = {};
+    objekat.periodicna = [];
+    objekat.vanredna = [];
+    db.rezervacija.findAll({
+        include:[
+        {
+            model: db.sala,
+            as: "rezervacijaSala"
+        },
+        {
+            model: db.osoblje,
+            as: "rezervacijaOsoba"
+        },
+        {
+            model: db.termin,
+            as: "rezervacijaTermin"
+        }
+        ]
+    }).then(function(rezervacije){
+        rezervacije.forEach(rezervacija => {
+            tempObjekat = {};
+            tempObjekat.predavac = rezervacija.rezervacijaOsoba.ime;
+            tempObjekat.naziv = rezervacija.rezervacijaSala.naziv;
+            //jer vraca i sekunde
+            var poc = rezervacija.rezervacijaTermin.pocetak.split(":");
+            var end = rezervacija.rezervacijaTermin.kraj.split(":");
+            if(rezervacija.rezervacijaTermin.redovni == true){
+                tempObjekat.dan = rezervacija.rezervacijaTermin.dan;
+                tempObjekat.semestar = rezervacija.rezervacijaTermin.semestar;
+                tempObjekat.pocetak = poc[0] + ":" + poc[1];
+                tempObjekat.kraj = end[0] + ":" + end[1];
+                objekat.periodicna.push(tempObjekat);
+            }
+            else{
+                tempObjekat.datum = rezervacija.rezervacijaTermin.datum;
+                tempObjekat.pocetak = poc[0] + ":" + poc[1];
+                tempObjekat.kraj = end[0] + ":" + end[1];
+                objekat.vanredna.push(tempObjekat);
+            }
+        });
+        res.json(objekat);
+    });
+});
+app.get('/rezervacije',function(req,res){
+    var objekat = [];
+    var tempObjekat = {};
+    db.rezervacija.findAll({
+        include:[
+        {
+            model: db.sala,
+            as: "rezervacijaSala"
+        },
+        {
+            model: db.osoblje,
+            as: "rezervacijaOsoba",
+            //da uradi outer join
+            required: false,
+            right: true
+        },
+        {
+            model: db.termin,
+            as: "rezervacijaTermin",
+            //ovdje moze where, al onda ne radi outer join pise na oficijelnos stranici fkt ne radi
+            /*where:{
+                [Op.or]: [
+                    { [Op.and]: [
+                        { dan: null },
+                        { datum: today }
+                      ] },
+                    { [Op.and]: [
+                        { dan: danUSedmici - 1 },
+                        { datum: null }
+                      ] }
+                  ]
+            }*/
+        }
+        ],
+    }).then(function(rezervacije){
+        rezervacije.forEach(rezervacija => {
+
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+            /*if (dd < 10) {
+            dd = '0' + dd;
+            } 
+            if (mm < 10) {
+            mm = '0' + mm;
+            }*/
+            var today = dd + '.' + mm + '.' + yyyy;
+
+            var danUSedmici = new Date().getDay();
+            if(danUSedmici==0) danUSedmici = 7;
+
+            //posto imam vec fju za provjeravanje intervala
+            var now = new Date();
+            var satiSad = now.getHours();
+            var satiPoslije = satiSad;
+            var minuteSad = now.getMinutes();
+            var minutePoslije = minuteSad + 1;
+            if(minutePoslije == 60){
+                satiPoslije++;
+                minutePoslije = 0;
+            }
+            if(satiPoslije == 24) satiPoslije = 0;
+            if(satiSad<10) satiSad = '0' + satiSad;
+            if(satiPoslije<10) satiPoslije = '0' + satiPoslije;
+            if(minuteSad<10) minuteSad = '0' + minuteSad;
+            if(minutePoslije<10) minutePoslije = '0' + minutePoslije;
+            var pocIntervala = satiSad + ":" + minuteSad;
+            var krajIntervala = satiPoslije + ":" + minutePoslije;
+            //console.log(pocIntervala + " " + krajIntervala);
+
+            tempObjekat = {};
+            if(rezervacija.rezervacijaTermin){
+                var pocBaza = rezervacija.rezervacijaTermin.pocetak.split(":");
+                    pocBaza = pocBaza[0] + ":" + pocBaza[1];
+                    var krajBaza = rezervacija.rezervacijaTermin.kraj.split(":");
+                    krajBaza = krajBaza[0] + ":" + krajBaza[1];
+                if(rezervacija.rezervacijaTermin.redovni == true){
+                    if(rezervacija.rezervacijaTermin.dan == danUSedmici - 1 && rezervacija.rezervacijaTermin.datum == null && poklapanjeIntervala(pocIntervala, krajIntervala, pocBaza, krajBaza)){
+                        tempObjekat.predavac = rezervacija.rezervacijaOsoba.ime;
+                        tempObjekat.naziv = rezervacija.rezervacijaSala.naziv; 
+                        objekat.push(tempObjekat);
+                    }
+                }
+                else{
+                    if(rezervacija.rezervacijaTermin.dan == null && rezervacija.rezervacijaTermin.datum == today && poklapanjeIntervala(pocIntervala, krajIntervala, pocBaza, krajBaza)){
+                        tempObjekat.predavac = rezervacija.rezervacijaOsoba.ime;
+                        tempObjekat.naziv = rezervacija.rezervacijaSala.naziv;
+                        objekat.push(tempObjekat);
+                    }
+                }
+            }
+            /*tempObjekat.predavac = rezervacija.rezervacijaOsoba.ime;
+            if(rezervacija.rezervacijaSala)
+            tempObjekat.naziv = rezervacija.rezervacijaSala.naziv;*/
+            else {
+                //za one koji nemaju nikakvu rezervaciju ne samo u ovom terminu
+                tempObjekat.predavac = rezervacija.rezervacijaOsoba.ime;
+                tempObjekat.naziv = "u kancelariji";
+                objekat.push(tempObjekat);
+            }
+        });
+        rezervacije.forEach(r => {
+            tempObjekat = {};
+            var ima = false;
+                objekat.forEach(o => {
+                    if(o.predavac == r.rezervacijaOsoba.ime){
+                        //console.log(o.predavac);
+                        ima = true;
+                    }
+                });
+                if(!ima){
+                    tempObjekat.predavac = r.rezervacijaOsoba.ime;
+                    tempObjekat.naziv = "u kancelariji";
+                    objekat.push(tempObjekat);
+                }
+        });
+        res.json(objekat);
+    });
 });
 app.get('/',function(req,res){
     res.sendFile(__dirname+"/public/pocetna.html");
+});
+app.get('/osoblje', function(req, res){
+    db.osoblje.findAll().then(function(osobe){
+        res.json(osobe);
+    });
+});
+app.get('/sale', function(req, res){
+    db.sala.findAll().then(function(sale){
+        res.json(sale);
+    });
 });
 app.post('/slike',function(req,res){
     let tijelo = req.body;
@@ -37,11 +214,47 @@ app.post('/rezervacija.html', function(req, res){
     let tijelo = req.body;
     //console.log(tijelo);
     //prvo provjera pa dodavanje
-    fs.readFile('zauzeca.json', function(err, buffer){
-        if(err) throw err;
-        var objekat = buffer;
-        objekat = JSON.parse(objekat);
-        //console.log(objekat);
+    var objekat = {};
+    var tempObjekat = {};
+    objekat.periodicna = [];
+    objekat.vanredna = [];
+    db.rezervacija.findAll({
+        include:[
+        {
+            model: db.sala,
+            as: "rezervacijaSala"
+        },
+        {
+            model: db.osoblje,
+            as: "rezervacijaOsoba"
+        },
+        {
+            model: db.termin,
+            as: "rezervacijaTermin"
+        }
+        ]
+    }).then(function(rezervacije){
+        rezervacije.forEach(rezervacija => {
+            tempObjekat = {};
+            tempObjekat.predavac = rezervacija.rezervacijaOsoba.ime;
+            tempObjekat.naziv = rezervacija.rezervacijaSala.naziv;
+            //jer vraca i sekunde
+            var poc = rezervacija.rezervacijaTermin.pocetak.split(":");
+            var end = rezervacija.rezervacijaTermin.kraj.split(":");
+            if(rezervacija.rezervacijaTermin.redovni == true){
+                tempObjekat.dan = rezervacija.rezervacijaTermin.dan;
+                tempObjekat.semestar = rezervacija.rezervacijaTermin.semestar;
+                tempObjekat.pocetak = poc[0] + ":" + poc[1];
+                tempObjekat.kraj = end[0] + ":" + end[1];
+                objekat.periodicna.push(tempObjekat);
+            }
+            else{
+                tempObjekat.datum = rezervacija.rezervacijaTermin.datum;
+                tempObjekat.pocetak = poc[0] + ":" + poc[1];
+                tempObjekat.kraj = end[0] + ":" + end[1];
+                objekat.vanredna.push(tempObjekat);
+            }
+        });
         var nema = true;
         if(tijelo.semestar){
             objekat.periodicna.forEach(element => {
@@ -71,7 +284,33 @@ app.post('/rezervacija.html', function(req, res){
                         break;
                 }
             });
-            if(nema) objekat.periodicna.push(tijelo);
+            if(nema){
+                objekat.periodicna.push(tijelo);
+                var periodicnaListaPromisea = [];
+                var terminiListaPromisea = [];
+                db.sala.findOne({
+                    where:{
+                        naziv:tijelo.naziv
+                    }
+                }).then(function(s){
+                    db.osoblje.findOne({
+                        where:{
+                            ime:tijelo.predavac
+                        }
+                    }).then(function(o){
+                        return new Promise(function(resolve, reject){
+                            terminiListaPromisea.push(db.termin.create({redovni:true, dan:tijelo.dan, datum:null, semestar:tijelo.semestar, pocetak: tijelo.pocetak, kraj: tijelo.kraj}));
+                            Promise.all(terminiListaPromisea).then(function(termini){
+                                var termin = termini.filter(function(a){return a.pocetak===tijelo.pocetak})[0];
+                                periodicnaListaPromisea.push(db.rezervacija.create({termin:termin.id, sala:s.id, osoba:o.id}));
+                                Promise.all(periodicnaListaPromisea).then(function(){
+                                    res.json(objekat);
+                                }).catch(function(err){console.log("Rezervacija greska "+err);});
+                            }).catch(function(err){console.log("Termini greska "+err);});
+                        });
+                    });
+                });
+            } 
         }
         else{
             objekat.vanredna.forEach(element => {
@@ -100,15 +339,48 @@ app.post('/rezervacija.html', function(req, res){
                         break;
                 }     
             });
-            if(nema) objekat.vanredna.push(tijelo);
+            if(nema){
+                objekat.vanredna.push(tijelo);
+                var vanrednaListaPromisea = [];
+                var terminiListaPromisea = [];
+                db.sala.findOne({
+                    where:{
+                        naziv:tijelo.naziv
+                    }
+                }).then(function(s){
+                    db.osoblje.findOne({
+                        where:{
+                            ime:tijelo.predavac
+                        }
+                    }).then(function(o){
+                        return new Promise(function(resolve, reject){
+                            terminiListaPromisea.push(db.termin.create({redovni:false, dan:null, datum:tijelo.datum, semestar:null, pocetak: tijelo.pocetak, kraj: tijelo.kraj}));
+                            Promise.all(terminiListaPromisea).then(function(termini){
+                                var termin = termini.filter(function(a){return a.pocetak===tijelo.pocetak})[0];
+                                vanrednaListaPromisea.push(db.rezervacija.create({termin:termin.id, sala:s.id, osoba:o.id}));
+                                Promise.all(vanrednaListaPromisea).then(function(){
+                                    res.json(objekat);
+                                }).catch(function(err){console.log("Rezervacija greska "+err);});
+                            }).catch(function(err){console.log("Termini greska "+err);});
+                        });
+                    });
+                });
+            } 
         }
-        fs.writeFile('zauzeca.json', JSON.stringify(objekat), function(err){
+        /*fs.writeFile('zauzeca.json', JSON.stringify(objekat), function(err){
             if(err) throw err;
-        })
-        if(!nema) objekat.alert = true;
-        //moze objekat ne mora se stringify
-        res.json(objekat);
-    })
+        });*/
+        if(!nema){
+            objekat.alert = true;
+            res.json(objekat);
+        }
+    });
+    /*fs.readFile('zauzeca.json', function(err, buffer){
+        if(err) throw err;
+        var objekat = buffer;
+        objekat = JSON.parse(objekat);
+        //console.log(objekat);
+    });*/
 });
 function poklapanjeIntervala(poc1, kraj1, poc2, kraj2)
 	{
@@ -145,5 +417,7 @@ function poklapanjeIntervala(poc1, kraj1, poc2, kraj2)
         //uneseni pocetak se ne smije nalaziti izmedju pocetka iz liste i kraja iz liste niti smije biti jednak pocetku iz liste
         //uneseni kraj se ne smije nalaziti izmedju pocetka iz liste i kraja iz liste niti smije biti jednak kraju iz liste
 		return((kraj1 > poc2 && kraj1 <= kraj2) || (poc1 >= poc2 && poc1 < kraj2) || (poc1 <= poc2 && kraj1 >= kraj2) || (poc2 <= poc1 && kraj2 >= kraj1));
-	}
+    }
+    //dodala ovo za testove
+module.exports = app;
 app.listen(8080);

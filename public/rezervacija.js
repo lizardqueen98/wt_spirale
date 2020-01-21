@@ -17,8 +17,9 @@ dani.forEach(element => {
                     var kraj = document.getElementById("kraj").value;
                     //treba li checkbox?
                     var periodicno = document.getElementById("checkbox").checked;
+                    var predavac = document.getElementById("osoblje").value;
                     if(provjeraIntervala(pocetak, kraj))
-                    Pozivi.z2(naziv, dan, mjesec, pocetak, kraj, periodicno);
+                    Pozivi.z2(naziv, dan, mjesec, pocetak, kraj, periodicno, predavac);
                     else alert("Pogresan vremenski interval!");
                 } else { 
                     //pritisnuto cancel
@@ -57,4 +58,6 @@ function provjeraIntervala(poc, kraj)
             return false;
         }
         return true;
-	}
+    }
+    Pozivi.ucitajOsoblje();
+    Pozivi.ucitajSale();
