@@ -37,7 +37,7 @@ app.get('/zauzeca',function(req,res){
     }).then(function(rezervacije){
         rezervacije.forEach(rezervacija => {
             tempObjekat = {};
-            tempObjekat.predavac = rezervacija.rezervacijaOsoba.ime;
+            tempObjekat.predavac = rezervacija.rezervacijaOsoba.ime + " " + rezervacija.rezervacijaOsoba.prezime;
             tempObjekat.naziv = rezervacija.rezervacijaSala.naziv;
             //jer vraca i sekunde
             var poc = rezervacija.rezervacijaTermin.pocetak.split(":");
@@ -114,21 +114,13 @@ app.get('/rezervacije',function(req,res){
             //posto imam vec fju za provjeravanje intervala
             var now = new Date();
             var satiSad = now.getHours();
-            var satiPoslije = satiSad;
             var minuteSad = now.getMinutes();
-            var minutePoslije = minuteSad + 1;
-            if(minutePoslije == 60){
-                satiPoslije++;
-                minutePoslije = 0;
-            }
-            if(satiPoslije == 24) satiPoslije = 0;
+           
             if(satiSad<10) satiSad = '0' + satiSad;
-            if(satiPoslije<10) satiPoslije = '0' + satiPoslije;
             if(minuteSad<10) minuteSad = '0' + minuteSad;
-            if(minutePoslije<10) minutePoslije = '0' + minutePoslije;
+
             var pocIntervala = satiSad + ":" + minuteSad;
-            var krajIntervala = satiPoslije + ":" + minutePoslije;
-            //console.log(pocIntervala + " " + krajIntervala);
+            var krajIntervala = pocIntervala;
 
             tempObjekat = {};
             if(rezervacija.rezervacijaTermin){
@@ -138,14 +130,14 @@ app.get('/rezervacije',function(req,res){
                     krajBaza = krajBaza[0] + ":" + krajBaza[1];
                 if(rezervacija.rezervacijaTermin.redovni == true){
                     if(rezervacija.rezervacijaTermin.dan == danUSedmici - 1 && rezervacija.rezervacijaTermin.datum == null && poklapanjeIntervala(pocIntervala, krajIntervala, pocBaza, krajBaza)){
-                        tempObjekat.predavac = rezervacija.rezervacijaOsoba.ime;
+                        tempObjekat.predavac = rezervacija.rezervacijaOsoba.ime + " " + rezervacija.rezervacijaOsoba.prezime;
                         tempObjekat.naziv = rezervacija.rezervacijaSala.naziv; 
                         objekat.push(tempObjekat);
                     }
                 }
                 else{
                     if(rezervacija.rezervacijaTermin.dan == null && rezervacija.rezervacijaTermin.datum == today && poklapanjeIntervala(pocIntervala, krajIntervala, pocBaza, krajBaza)){
-                        tempObjekat.predavac = rezervacija.rezervacijaOsoba.ime;
+                        tempObjekat.predavac = rezervacija.rezervacijaOsoba.ime + " " + rezervacija.rezervacijaOsoba.prezime;
                         tempObjekat.naziv = rezervacija.rezervacijaSala.naziv;
                         objekat.push(tempObjekat);
                     }
@@ -156,7 +148,7 @@ app.get('/rezervacije',function(req,res){
             tempObjekat.naziv = rezervacija.rezervacijaSala.naziv;*/
             else {
                 //za one koji nemaju nikakvu rezervaciju ne samo u ovom terminu
-                tempObjekat.predavac = rezervacija.rezervacijaOsoba.ime;
+                tempObjekat.predavac = rezervacija.rezervacijaOsoba.ime + " " + rezervacija.rezervacijaOsoba.prezime;
                 tempObjekat.naziv = "u kancelariji";
                 objekat.push(tempObjekat);
             }
@@ -165,13 +157,13 @@ app.get('/rezervacije',function(req,res){
             tempObjekat = {};
             var ima = false;
                 objekat.forEach(o => {
-                    if(o.predavac == r.rezervacijaOsoba.ime){
+                    if(o.predavac == r.rezervacijaOsoba.ime + " " + r.rezervacijaOsoba.prezime){
                         //console.log(o.predavac);
                         ima = true;
                     }
                 });
                 if(!ima){
-                    tempObjekat.predavac = r.rezervacijaOsoba.ime;
+                    tempObjekat.predavac = r.rezervacijaOsoba.ime + " " + r.rezervacijaOsoba.prezime;
                     tempObjekat.naziv = "u kancelariji";
                     objekat.push(tempObjekat);
                 }
@@ -236,7 +228,7 @@ app.post('/rezervacija.html', function(req, res){
     }).then(function(rezervacije){
         rezervacije.forEach(rezervacija => {
             tempObjekat = {};
-            tempObjekat.predavac = rezervacija.rezervacijaOsoba.ime;
+            tempObjekat.predavac = rezervacija.rezervacijaOsoba.ime + " " + rezervacija.rezervacijaOsoba.prezime;
             tempObjekat.naziv = rezervacija.rezervacijaSala.naziv;
             //jer vraca i sekunde
             var poc = rezervacija.rezervacijaTermin.pocetak.split(":");
@@ -256,10 +248,12 @@ app.post('/rezervacija.html', function(req, res){
             }
         });
         var nema = true;
+        var imeOsobe = "";
         if(tijelo.semestar){
             objekat.periodicna.forEach(element => {
                 if(element.dan === tijelo.dan && element.semestar === tijelo.semestar && element.naziv === tijelo.naziv && poklapanjeIntervala(tijelo.pocetak, tijelo.kraj, element.pocetak, element.kraj)){
                     nema = false;
+                    imeOsobe = element.predavac;
                 }
                 
             });
@@ -272,6 +266,7 @@ app.post('/rezervacija.html', function(req, res){
                         if(danMjesecGodina[1] == 10 || danMjesecGodina[1] == 11 || danMjesecGodina[1] == 12 || danMjesecGodina[1] == 1){
                             if(day-1 === tijelo.dan && element.naziv === tijelo.naziv && poklapanjeIntervala(tijelo.pocetak, tijelo.kraj, element.pocetak, element.kraj)){    
                                 nema = false;
+                                imeOsobe = element.predavac;
                             }
                         }
                         break;
@@ -279,12 +274,15 @@ app.post('/rezervacija.html', function(req, res){
                         if(danMjesecGodina[1] == 2 || danMjesecGodina[1] == 3 || danMjesecGodina[1] == 4 || danMjesecGodina[1] == 5 || danMjesecGodina[1] == 6){
                             if(day-1 === tijelo.dan && element.naziv === tijelo.naziv && poklapanjeIntervala(tijelo.pocetak, tijelo.kraj, element.pocetak, element.kraj)){    
                                 nema = false;
+                                imeOsobe = element.predavac;
                             }
                         }
                         break;
                 }
             });
             if(nema){
+                var name = tijelo.predavac.split(" ")[0];
+                var lastname = tijelo.predavac.split(" ")[1];
                 objekat.periodicna.push(tijelo);
                 var periodicnaListaPromisea = [];
                 var terminiListaPromisea = [];
@@ -295,7 +293,8 @@ app.post('/rezervacija.html', function(req, res){
                 }).then(function(s){
                     db.osoblje.findOne({
                         where:{
-                            ime:tijelo.predavac
+                            ime:name,
+                            prezime: lastname
                         }
                     }).then(function(o){
                         return new Promise(function(resolve, reject){
@@ -316,6 +315,7 @@ app.post('/rezervacija.html', function(req, res){
             objekat.vanredna.forEach(element => {
                 if(element.datum === tijelo.datum && element.naziv === tijelo.naziv && poklapanjeIntervala(tijelo.pocetak, tijelo.kraj, element.pocetak, element.kraj)){    
                     nema = false;
+                    imeOsobe = element.predavac;
                 }
             });
             objekat.periodicna.forEach(element => {
@@ -327,6 +327,7 @@ app.post('/rezervacija.html', function(req, res){
                         if(danMjesecGodina[1] == 10 || danMjesecGodina[1] == 11 || danMjesecGodina[1] == 12 || danMjesecGodina[1] == 1){
                             if(element.dan === day-1 && element.naziv === tijelo.naziv && poklapanjeIntervala(tijelo.pocetak, tijelo.kraj, element.pocetak, element.kraj)){
                                 nema = false;
+                                imeOsobe = element.predavac;
                             }
                         }
                         break;
@@ -334,12 +335,15 @@ app.post('/rezervacija.html', function(req, res){
                         if(danMjesecGodina[1] == 2 || danMjesecGodina[1] == 3 || danMjesecGodina[1] == 4 || danMjesecGodina[1] == 5 || danMjesecGodina[1] == 6){
                             if(element.dan === day-1 && element.naziv === tijelo.naziv && poklapanjeIntervala(tijelo.pocetak, tijelo.kraj, element.pocetak, element.kraj)){
                                 nema = false;
+                                imeOsobe = element.predavac;
                             }
                         }
                         break;
                 }     
             });
             if(nema){
+                var name = tijelo.predavac.split(" ")[0];
+                var lastname = tijelo.predavac.split(" ")[1];
                 objekat.vanredna.push(tijelo);
                 var vanrednaListaPromisea = [];
                 var terminiListaPromisea = [];
@@ -350,7 +354,8 @@ app.post('/rezervacija.html', function(req, res){
                 }).then(function(s){
                     db.osoblje.findOne({
                         where:{
-                            ime:tijelo.predavac
+                            ime:name,
+                            prezime: lastname
                         }
                     }).then(function(o){
                         return new Promise(function(resolve, reject){
@@ -371,7 +376,7 @@ app.post('/rezervacija.html', function(req, res){
             if(err) throw err;
         });*/
         if(!nema){
-            objekat.alert = true;
+            objekat.alert = imeOsobe;
             res.json(objekat);
         }
     });
@@ -409,7 +414,7 @@ function poklapanjeIntervala(poc1, kraj1, poc2, kraj2)
 		kraj1 = parseInt(kraj1);
         kraj2 = parseInt(kraj2);
 
-        if(poc1 >= kraj1 || poc2 >= kraj2){
+        if(poc1 > kraj1 || poc2 > kraj2){
             //alert("Pogresan vremenski interval.");
             return false;
         } 

@@ -7,7 +7,7 @@ var expect = chai.expect;
 //chai.request('http://localhost:8080') - ovo se treba staviti prije svakog poziva get ili post ako ne mogne
 
   describe("GET /osoblje", function() {
-    it("it should has status code 200", function(done) {
+    it("Dohvacanje osoblja koje se ubacuje u bazu pri kreiranju.", function(done) {
       supertest(app)
       //chai.request('http://localhost:8080') - ovako
         .get("/osoblje")
@@ -15,19 +15,19 @@ var expect = chai.expect;
           if (err) done(err);
           //kod
           var rezultati = res.body;
-          var osobe = ["Neko", "Drugi", "Test"];
-          var rezultatOsobe = [];
+          var osobe = ["Neko Nekic", "Drugi Neko", "Test Test"];
+          var ima = true;
           rezultati.forEach(rezultat => {
-            rezultatOsobe.push(rezultat.ime);
+            if(!osobe.includes(rezultat.ime + " " + rezultat.prezime)) ima = false;
           });
           expect(res).to.have.status(200);
-          expect(JSON.stringify(osobe)==JSON.stringify(rezultatOsobe)).to.be.true;
+          expect(ima).to.be.true;
           done();
         });
     });
   });
   describe("GET /sale", function() {
-    it("it should has status code 200", function(done) {
+    it("Dohvacanje sala koje se ubacuju u bazu pri kreiranju.", function(done) {
       supertest(app)
         .get("/sale")
         .end(function(err, res){
@@ -35,19 +35,20 @@ var expect = chai.expect;
           //kod
           var rezultati = res.body;
           var sale = ["1-11", "1-15"];
-          var rezultatSale = [];
+          var ima = true;
           rezultati.forEach(rezultat => {
-            rezultatSale.push(rezultat.naziv);
+            if(!sale.includes(rezultat.naziv)) ima = false;
           });
           expect(res).to.have.status(200);
-          expect(JSON.stringify(sale)==JSON.stringify(rezultatSale)).to.be.true;
+          //ne moze strigify
+          expect(ima).to.be.true;
           done();
         });
     });
   });
   describe("GET /zauzeca", function() {
     var zauzecePeriodicno = {
-      predavac: "Test",
+      predavac: "Test Test",
       naziv: "1-11",
       dan: 0,
       semestar: "zimski",
@@ -55,13 +56,13 @@ var expect = chai.expect;
       kraj: "14:00"
     }
     var zauzeceVanredno = {
-      predavac: "Neko",
+      predavac: "Neko Nekic",
       naziv: "1-11",
       datum: "1.1.2020",
       pocetak: "12:00",
       kraj: "13:00"
     }
-    it("it should has status code 200", function(done) {
+    it("Dohvacanje zauzeca koja se ubacuju u bazu pri kreiranju.", function(done) {
       supertest(app)
         .get("/zauzeca")
         .end(function(err, res){
@@ -84,22 +85,33 @@ var expect = chai.expect;
     });
   });
   describe("POST /rezervacija.html", function() {
+    var today = new Date();
+    var sad = today.getHours();
+    var poslije = sad + 1;
+    sad = sad + ":00";
+    if(poslije == 24){
+      poslije = "23:59";
+    }
+    else poslije = poslije + ":00";
+    var danasnjiDan = today.getDay();
+    if(danasnjiDan == 0) danasnjiDan = 7;
+
     var objekatPeriodicno = {
-      predavac: "Neko",
+      predavac: "Neko Nekic",
       naziv: "1-11",
-      dan: 1,
+      dan: danasnjiDan - 1,
       semestar: "ljetni",
-      pocetak: "12:00",
-      kraj: "13:00"
+      pocetak: sad,
+      kraj: poslije
     }
     var objekatVanredno = {
-      predavac: "Test",
+      predavac: "Test Test",
       naziv: "1-15",
       datum: "14.2.2020",
       pocetak: "13:00",
       kraj: "14:00"
     }
-    it("it shoud return status code 200 is name exists", function(done) {
+    it("Ubacivanje periodicnog zauzeca i provjera da li se korektno azurira niz zauzeca koji se treba ucitati.", function(done) {
       supertest(app)
         .post("/rezervacija.html")
         .set('content-type', 'application/json')
@@ -118,7 +130,40 @@ var expect = chai.expect;
           done();
         });
     });
-    it("it shoud return status code 200 is name exists", function(done) {
+    it("Ubacivanje periodicnog zauzeca koje vec postoji, od strane iste osobe, treba da se vrati alert.", function(done) {
+      //s obzirom da se ovo zauzece u prethodnom testu uspjesno doda, prilikom dugog pokusaja dodavanja pojavit ce se alert
+      this.timeout(1000);
+      supertest(app)
+        .post("/rezervacija.html")
+        .set('content-type', 'application/json')
+        .send(JSON.stringify(objekatPeriodicno))
+        .end(function(err, res) {
+          if (err) done(err);
+          //kod
+          let tijelo = res.body;
+          expect(res).to.have.status(200);
+          expect(tijelo).to.have.property('alert');
+          done();
+        });
+    });
+    it("Ubacivanje periodicnog zauzeca koje vec postoji, od strane druge osobe, treba da se vrati alert.", function(done) {
+      //s obzirom da se ovo zauzece u prethodnom testu uspjesno doda, prilikom dugog pokusaja dodavanja pojavit ce se alert
+      this.timeout(2000);
+      objekatPeriodicno.predavac = "Drugi"
+      supertest(app)
+        .post("/rezervacija.html")
+        .set('content-type', 'application/json')
+        .send(JSON.stringify(objekatPeriodicno))
+        .end(function(err, res) {
+          if (err) done(err);
+          //kod
+          let tijelo = res.body;
+          expect(res).to.have.status(200);
+          expect(tijelo).to.have.property('alert');
+          done();
+        });
+    });
+    it("Ubacivanje vanrednog zauzeca i provjera da li se korektno azurira niz zauzeca koji se treba ucitati.", function(done) {
       supertest(app)
         .post("/rezervacija.html")
         .set('content-type', 'application/json')
@@ -134,6 +179,60 @@ var expect = chai.expect;
           console.log(dodano);
           expect(res).to.have.status(200);
           expect(dodano).to.be.true;
+          done();
+        });
+    });
+    it("Ubacivanje vanrednog zauzeca koje vec postoji, od strane iste osobe, treba da se vrati alert.", function(done) {
+      //s obzirom da se ovo zauzece u prethodnom testu uspjesno doda, prilikom dugog pokusaja dodavanja pojavit ce se alert
+      this.timeout(1000);
+      supertest(app)
+        .post("/rezervacija.html")
+        .set('content-type', 'application/json')
+        .send(JSON.stringify(objekatVanredno))
+        .end(function(err, res) {
+          if (err) done(err);
+          //kod
+          let tijelo = res.body;
+          expect(res).to.have.status(200);
+          expect(tijelo).to.have.property('alert');
+          done();
+        });
+    });
+    it("Ubacivanje vanrednog zauzeca koje vec postoji, od strane druge osobe, treba da se vrati alert.", function(done) {
+      //s obzirom da se ovo zauzece u prethodnom testu uspjesno doda, prilikom dugog pokusaja dodavanja pojavit ce se alert
+      this.timeout(2000);
+      objekatVanredno.predavac = "Drugi";
+      supertest(app)
+        .post("/rezervacija.html")
+        .set('content-type', 'application/json')
+        .send(JSON.stringify(objekatVanredno))
+        .end(function(err, res) {
+          if (err) done(err);
+          //kod
+          let tijelo = res.body;
+          expect(res).to.have.status(200);
+          expect(tijelo).to.have.property('alert');
+          done();
+        });
+    });
+  });
+  describe("GET /rezervacije", function() {
+    it("Dohvacanje rezervacija, tj. osoba koje su trenutno u nekoj sali.", function(done) {
+      this.timeout(5000);
+      supertest(app)
+        .get("/rezervacije")
+        .end(function(err, res){
+          if (err) done(err);
+          //kod
+          //provjeravamo ima li onih koje smo na pocetku pusali
+          var osobeISale = res.body;
+          //Neko treba biti u sali 1-11
+          var uSali = false;
+          osobeISale.forEach(elem => {
+            if(elem.predavac == "Neko Nekic" && elem.naziv == "1-11") uSali = true;
+          });
+          expect(res).to.have.status(200);
+          expect(uSali).to.be.true;
           done();
         });
     });

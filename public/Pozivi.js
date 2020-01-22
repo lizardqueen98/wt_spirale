@@ -29,9 +29,11 @@ let Pozivi = (function(){
         if (ajax.readyState == 4 && ajax.status == 200){
             var objekat = JSON.parse(ajax.responseText);
             if(objekat.alert){
+                var imeOsobe = objekat.alert;
                 delete objekat.alert;
                 var datumAlert = dan + '.' + mjeseci[mjesec] + '.' + godina;
-                alert("Nije moguće rezervisati salu " +  naziv + " za navedeni datum " + datumAlert + " i termin od " +  pocetak + " do " +  kraj + " od predavaca " + predavac);
+                alert("Nije moguće rezervisati salu " +  naziv + " za navedeni datum " + datumAlert + " i termin od " +  pocetak + " do " +  kraj +
+                " od predavaca " + predavac + " jer je rezervisana od strane " + imeOsobe);
             }
             Kalendar.ucitajPodatke(objekat.periodicna, objekat.vanredna);
             //isto funkcija iz kalendara
@@ -152,7 +154,7 @@ let Pozivi = (function(){
             var osobeHtml = "<select>";
             osobe.forEach(osoba => {
                 //console.log(osoba.ime);
-                osobeHtml += "<option value='" + osoba.ime + "'>" + osoba.ime + " " + osoba.prezime + "</option>";
+                osobeHtml += "<option value='" + osoba.ime + " " + osoba.prezime + "'>" + osoba.ime + " " + osoba.prezime + "</option>";
             });
             osobeHtml += "</select>";
             document.getElementById("osoblje").innerHTML = osobeHtml;
