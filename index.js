@@ -12,6 +12,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 //__dirname tells you the absolute path of the directory containing the currently executing file.
 
+const priprema = require("./priprema.js");
+priprema.inicijalizacijaZbogTestova(
+    ()=>{ 
+            app.listen(8080, function()
+                {
+                    app.emit("Gotova baza.");
+                }); 
+        });
+
 //app.get('/zauzeca.json',function(req,res){
 app.get('/zauzeca',function(req,res){
     //res.sendFile(__dirname+"/zauzeca.json"); sad se dohvaca iz baze
@@ -425,4 +434,4 @@ function poklapanjeIntervala(poc1, kraj1, poc2, kraj2)
     }
     //dodala ovo za testove
 module.exports = app;
-app.listen(8080);
+//app.listen(8080);

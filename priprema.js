@@ -1,10 +1,25 @@
 const db = require('./db.js')
-db.sequelize.sync({force:true}).then(function(){
+/*db.sequelize.sync({force:true}).then(function(){
     inicializacija().then(function(){
         console.log("Gotovo kreiranje tabela i ubacivanje pocetnih podataka!");
         process.exit();
     });
-});
+});*/
+
+//rjesenje tako da se baza pravi prilikom pokretanja index-a, a da testovi prolaze
+function inicijalizacijaZbogTestova(callback) 
+{
+    db.sequelize.sync({force:true}).then(function(){
+        inicializacija().then(
+            function(){
+                console.log("Gotovo kreiranje tabela i ubacivanje pocetnih podataka!");
+                callback();
+            }).catch(function(error){console.log(error);});
+    }).catch(function(error){console.log(error);});
+}
+
+db.inicijalizacijaZbogTestova = inicijalizacijaZbogTestova;
+
 function inicializacija(){
     var terminiListaPromisea=[];
     var osobljeListaPromisea=[];
@@ -51,3 +66,4 @@ function inicializacija(){
         saleListaPromisea.push(db.sala.create({naziv:'1-15', zaduzenaOsoba:2}));*/
     });
 }
+module.exports = db;

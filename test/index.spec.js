@@ -6,6 +6,13 @@ chai.use(chaiHttp);
 var expect = chai.expect;
 //chai.request('http://localhost:8080') - ovo se treba staviti prije svakog poziva get ili post ako ne mogne
 
+before(function (done) {
+    this.timeout(7000);
+    app.on("Gotova baza.", function(){
+        done();
+    });
+});
+
   describe("GET /osoblje", function() {
     it("Dohvacanje osoblja koje se ubacuje u bazu pri kreiranju.", function(done) {
       supertest(app)
